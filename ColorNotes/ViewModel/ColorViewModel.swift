@@ -10,6 +10,7 @@ import RealmSwift
 
 class ColorViewModel : ObservableObject {
     
+    @Published var colorId : ObjectId = ObjectId()
     @Published var preferredName : String = ""
     @Published var colorDescription : String = ""
     
@@ -71,6 +72,11 @@ class ColorViewModel : ObservableObject {
     
     //Setting and Clearing Data
     func setUpInitialData() {
+        guard let updateData = updateObject else { return }
+        
+        colorId = updateData.id
+        preferredName = updateData.preferredName
+        colorDescription = updateData.colorDescription
         
     }
     
