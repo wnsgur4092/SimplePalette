@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF080700296683BA0039CB76 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0806FF296683BA0039CB76 /* ColorModel.swift */; };
 		BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */; };
 		BF7F1A6C29667CAA00826BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6B29667CAA00826BDB /* ContentView.swift */; };
 		BF7F1A6E29667CAB00826BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F1A6D29667CAB00826BDB /* Assets.xcassets */; };
 		BF7F1A7129667CAB00826BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F1A7029667CAB00826BDB /* Preview Assets.xcassets */; };
+		BF7F1A7A29667CC500826BDB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BF7F1A7929667CC500826BDB /* Realm */; };
+		BF7F1A7C29667CC500826BDB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BF7F1A7B29667CC500826BDB /* RealmSwift */; };
+		BF7F1A8129667D4900826BDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* HomeView.swift */; };
+		BF7F1A8329667DCA00826BDB /* AddColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* AddColorView.swift */; };
+		BF7F1A8529667E2600826BDB /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF0806FF296683BA0039CB76 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		BF7F1A6629667CAA00826BDB /* ColorNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNotesApp.swift; sourceTree = "<group>"; };
 		BF7F1A6B29667CAA00826BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF7F1A6D29667CAB00826BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF7F1A7029667CAB00826BDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF7F1A8029667D4900826BDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BF7F1A8229667DCA00826BDB /* AddColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorView.swift; sourceTree = "<group>"; };
+		BF7F1A8429667E2600826BDB /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7F1A7C29667CC500826BDB /* RealmSwift in Frameworks */,
+				BF7F1A7A29667CC500826BDB /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +49,7 @@
 			children = (
 				BF7F1A6829667CAA00826BDB /* ColorNotes */,
 				BF7F1A6729667CAA00826BDB /* Products */,
+				BF7F1A7829667CC500826BDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,7 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */,
-				BF7F1A6B29667CAA00826BDB /* ContentView.swift */,
+				BF7F1A7D29667D1D00826BDB /* ViewModel */,
+				BF7F1A7E29667D2200826BDB /* Model */,
+				BF7F1A7F29667D2800826BDB /* View */,
 				BF7F1A6D29667CAB00826BDB /* Assets.xcassets */,
 				BF7F1A6F29667CAB00826BDB /* Preview Content */,
 			);
@@ -65,6 +80,39 @@
 				BF7F1A7029667CAB00826BDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BF7F1A7829667CC500826BDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF7F1A7D29667D1D00826BDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F1A8429667E2600826BDB /* ColorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF7F1A7E29667D2200826BDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF0806FF296683BA0039CB76 /* ColorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF7F1A7F29667D2800826BDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F1A6B29667CAA00826BDB /* ContentView.swift */,
+				BF7F1A8029667D4900826BDB /* HomeView.swift */,
+				BF7F1A8229667DCA00826BDB /* AddColorView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +131,10 @@
 			dependencies = (
 			);
 			name = ColorNotes;
+			packageProductDependencies = (
+				BF7F1A7929667CC500826BDB /* Realm */,
+				BF7F1A7B29667CC500826BDB /* RealmSwift */,
+			);
 			productName = ColorNotes;
 			productReference = BF7F1A6629667CAA00826BDB /* ColorNotes.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +163,9 @@
 				Base,
 			);
 			mainGroup = BF7F1A5D29667CAA00826BDB;
+			packageReferences = (
+				BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = BF7F1A6729667CAA00826BDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7F1A8329667DCA00826BDB /* AddColorView.swift in Sources */,
+				BF7F1A8129667D4900826BDB /* HomeView.swift in Sources */,
+				BF7F1A8529667E2600826BDB /* ColorViewModel.swift in Sources */,
 				BF7F1A6C29667CAA00826BDB /* ContentView.swift in Sources */,
 				BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */,
+				BF080700296683BA0039CB76 /* ColorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +398,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF7F1A7929667CC500826BDB /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		BF7F1A7B29667CC500826BDB /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF7F1A5E29667CAA00826BDB /* Project object */;
 }
