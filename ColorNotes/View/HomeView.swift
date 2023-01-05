@@ -66,6 +66,23 @@ struct HomeView: View {
                         .cornerRadius(6)
                         .shadow(color: Color.primary.opacity(0.33), radius: 1, x: 2, y: 2)
                         .padding(.vertical, 8)
+                        
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .contextMenu {
+                            Button {
+                                modelData.updateObject = colorValue
+                                modelData.openAddPage.toggle()
+                            } label: {
+                                Text("Update Item")
+                            }
+                            
+                            Button {
+                                modelData.deleteData(object: colorValue)
+                            } label: {
+                                Text("Delete Item")
+                            }
+
+                        }
                     }
                 }
                 .navigationTitle("Color Notes")

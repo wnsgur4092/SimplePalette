@@ -56,6 +56,12 @@ struct AddColorView: View {
                 }
             }
         }
+        .onAppear(perform: {
+            modelData.setUpInitialData()
+        })
+        .onDisappear {
+            modelData.deInitData()
+        }
     }
 }
 

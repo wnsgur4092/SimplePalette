@@ -19,6 +19,9 @@ class ColorViewModel : ObservableObject {
     //Fetched Data
     @Published var colors : [ColorModel] = []
     
+    //Data Updation
+    @Published var updateObject : ColorModel?
+    
     
     init(){
         fetchData()
@@ -37,7 +40,7 @@ class ColorViewModel : ObservableObject {
         })
     }
     
-    //Realm Adding New Data
+    //Realm - Adding New Data
     func addData() {
         let color = ColorModel()
         color.preferredName = preferredName
@@ -54,6 +57,26 @@ class ColorViewModel : ObservableObject {
         })
     }
     
-
+    //Realm - Deleting Data
+    func deleteData(object : ColorModel) {
+        
+        guard let dbRef = try? Realm() else { return }
+        try? dbRef.write{
+            dbRef.delete(object)
+            
+            fetchData()
+        }
+    }
+    
+    
+    //Setting and Clearing Data
+    func setUpInitialData() {
+        
+    }
+    
+    func deInitData(){
+        preferredName = ""
+        colorDescription = ""
+    }
     
 }
