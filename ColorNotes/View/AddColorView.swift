@@ -16,7 +16,39 @@ struct AddColorView: View {
     var body: some View {
         NavigationView {
             VStack {
+                RoundedRectangle(cornerRadius: 6)
+                    .foregroundColor(modelData.swiftUIColor)
+                    .frame(maxWidth: .infinity, maxHeight: 180)
+                    .padding(.horizontal, 20)
+                    .padding(.top,8)
+                
+                
+                
                 List {
+                    Section("Select Color") {
+                        ColorPicker("Select Color", selection: $modelData.swiftUIColor)
+                            .onChange(of: modelData.swiftUIColor) { newValue in
+                                modelData.getColorsFromPicker(pickerColor: newValue)
+                            }
+                    }
+                    
+                    Section("Hexadecimal"){
+                        HStack{
+                            Text("\(modelData.colorCode)").bold()
+                            
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "doc.on.doc")
+                            }
+
+                        }
+  
+                    }
+                    
+                    
                     Section {
                         //INPUT preferred Name -> "COLOR NAME"
                         TextField("Enter Color Name", text: $modelData.preferredName)
@@ -42,7 +74,7 @@ struct AddColorView: View {
                     }
                 }
             } //: VSTACK
-            .navigationTitle("Add New Color")
+            .navigationTitle(modelData.updateObject == nil ? "Add New Color" : "Edit Color")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -26,7 +26,7 @@ struct HomeView: View {
                                 .clipped()
                             
                             VStack(alignment: .leading) {
-                                Text("#FF0000")
+                                Text(colorValue.colorCode)
                                     .font(.headline)
                                     .fontWeight(.medium)
                                     .padding(.bottom, 6)
