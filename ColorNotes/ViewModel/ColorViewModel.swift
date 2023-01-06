@@ -45,20 +45,20 @@ class ColorViewModel : ObservableObject {
     
     init(){
         fetchData()
+       
 
         
     }
     
-    func example(red: Double, blue: Double, green: Double) -> Color{
-                
-        var red = colorRed
-        var green = colorGreen
-        var blue = colorBlue
-        var alpha = colorAlpha
+    func selectedColorPickerWithUIColor() {
         
-        selectedColor = Color(red: red, green: green, blue: blue, opacity: alpha)
-        return selectedColor
+        let r: Double = Double(colorRed)
+        let g: Double = Double(colorGreen)
+        let b: Double = Double(colorBlue)
+        swiftUIColor = Color(red: r, green: g, blue: b, opacity: drawOpacity)
     }
+    
+
         
     
     func getColorsFromPicker(pickerColor: Color) {
@@ -97,6 +97,8 @@ class ColorViewModel : ObservableObject {
             drawUIColor = UIColor(red: r, green: g, blue: b, alpha: alpha)
             // Update Opacity
             drawOpacity = Double(alpha)
+            
+            
 
             // Update hex
             let rgb:Int = (Int)(round(r*255))<<16 | (Int)(round(g*255))<<8 | (Int)(round(b*255))<<0

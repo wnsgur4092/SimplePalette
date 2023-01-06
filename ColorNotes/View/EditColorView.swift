@@ -36,6 +36,9 @@ struct EditColorView: View {
                             .onChange(of: modelData.swiftUIColor) { newValue in
                                 modelData.getColorsFromPicker(pickerColor: newValue)
                             }
+                            .onAppear {
+                                modelData.selectedColorPickerWithUIColor()
+                            }
                     }
                     
                     Section("Hexadecimal"){
