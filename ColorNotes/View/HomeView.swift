@@ -21,15 +21,26 @@ struct HomeView: View {
                         //Color List
                         HStack{
                             RoundedRectangle(cornerRadius: 6)
-                                .fill(Color(.red))
+                                .fill(Color(UIColor(red: colorValue.colorRed, green: colorValue.colorGreen, blue: colorValue.colorBlue, alpha: colorValue.colorAlpha)))
                                 .frame(width: 140)
                                 .clipped()
                             
                             VStack(alignment: .leading) {
-                                Text(colorValue.colorCode)
-                                    .font(.headline)
-                                    .fontWeight(.medium)
-                                    .padding(.bottom, 6)
+                                HStack {
+                                    Text(colorValue.colorCode)
+                                        .font(.headline)
+                                        .fontWeight(.medium)
+
+                                    
+                                    Spacer()
+                                    
+                                    Text("Alpha: \(Int(colorValue.colorAlpha * 100))%")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(.bottom, 6)
+                                
+
                                 
                                 VStack(alignment:.leading) {
                                     Text(colorValue.preferredName)

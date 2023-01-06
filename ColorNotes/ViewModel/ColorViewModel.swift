@@ -18,7 +18,7 @@ class ColorViewModel : ObservableObject {
     @Published var colorRed : Double = 0.0
     @Published var colorBlue : Double = 0.0
     @Published var colorGreen : Double = 0.0
-    @Published var colorAlpah : Double = 0.0
+    @Published var colorAlpha : Double = 0.0
     @Published var colorCode : String = ""
     @Published var isFavorited : Bool = false
     
@@ -59,6 +59,11 @@ class ColorViewModel : ObservableObject {
             if (g > 1.0) {g = 1.0}
             if (b > 1.0) {b = 1.0}
 
+            colorRed = r
+            colorBlue = b
+            colorGreen = g
+            colorAlpha = alpha
+            
             // Update UIColor
             drawUIColor = UIColor(red: r, green: g, blue: b, alpha: alpha)
             // Update Opacity
@@ -71,7 +76,7 @@ class ColorViewModel : ObservableObject {
     }
     
     
-    //MARK: - REALM
+    //MARK: - REALM DATABASE
     //Fetching Data
     func fetchData(){
         guard let dbRef = try? Realm() else {return}
@@ -90,6 +95,10 @@ class ColorViewModel : ObservableObject {
         color.preferredName = preferredName
         color.colorDescription = colorDescription
         color.colorCode = colorCode
+        color.colorRed = colorRed
+        color.colorBlue = colorBlue
+        color.colorGreen = colorGreen
+        color.colorAlpha = colorAlpha
         
         guard let dbRef = try? Realm() else {return}
         
@@ -105,6 +114,9 @@ class ColorViewModel : ObservableObject {
             availableObject.preferredName = preferredName
             availableObject.colorDescription = colorDescription
             availableObject.colorCode = colorCode
+            availableObject.colorRed = colorRed
+            availableObject.colorBlue = colorBlue
+            availableObject.colorGreen = colorGreen
 
         })
         //Updating UI
@@ -131,7 +143,10 @@ class ColorViewModel : ObservableObject {
         preferredName = updateData.preferredName
         colorDescription = updateData.colorDescription
         colorCode = updateData.colorCode
-        
+        colorRed = updateData.colorRed
+        colorGreen = updateData.colorGreen
+        colorBlue = updateData.colorBlue
+        colorAlpha = updateData.colorAlpha
         
     }
     
@@ -139,6 +154,10 @@ class ColorViewModel : ObservableObject {
         preferredName = ""
         colorDescription = ""
         colorCode = ""
+        colorRed = 1.0
+        colorGreen = 0.0
+        colorBlue = 0.0
+        colorAlpha = 1.0
     }
     
 }

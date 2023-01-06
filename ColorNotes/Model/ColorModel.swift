@@ -19,7 +19,7 @@ class ColorModel : Object, Identifiable {
     @Persisted var colorRed : Double = 0.0
     @Persisted var colorBlue : Double = 0.0
     @Persisted var colorGreen : Double = 0.0
-    @Persisted var colorAlpah : Double = 0.0
+    @Persisted var colorAlpha : Double = 0.0
     @Persisted var colorCode : String = ""
     @Persisted var isFavorited : Bool = false
     
