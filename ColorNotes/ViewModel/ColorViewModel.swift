@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import UIKit
 
 class ColorViewModel : ObservableObject {
     
@@ -44,13 +45,17 @@ class ColorViewModel : ObservableObject {
     func getColorsFromPicker(pickerColor: Color) {
         let colorString = "\(pickerColor)"
         let colorArray: [String] = colorString.components(separatedBy: " ")
+        
+        print(colorString)
 
         if colorArray.count > 1 {
+            
             var r: CGFloat = CGFloat((Float(colorArray[1]) ?? 1))
             var g: CGFloat = CGFloat((Float(colorArray[2]) ?? 1))
             var b: CGFloat = CGFloat((Float(colorArray[3]) ?? 1))
             let alpha: CGFloat = CGFloat((Float(colorArray[4]) ?? 1))
 
+            //
             if (r < 0.0) {r = 0.0}
             if (g < 0.0) {g = 0.0}
             if (b < 0.0) {b = 0.0}
@@ -58,7 +63,8 @@ class ColorViewModel : ObservableObject {
             if (r > 1.0) {r = 1.0}
             if (g > 1.0) {g = 1.0}
             if (b > 1.0) {b = 1.0}
-
+            //
+            
             colorRed = r
             colorBlue = b
             colorGreen = g
@@ -70,9 +76,12 @@ class ColorViewModel : ObservableObject {
             drawOpacity = Double(alpha)
 
             // Update hex
-            let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+            let rgb:Int = (Int)(round(r*255))<<16 | (Int)(round(g*255))<<8 | (Int)(round(b*255))<<0
             colorCode = String(format: "#%06X", rgb)
         }
+        
+        
+
     }
     
     
