@@ -16,6 +16,8 @@ class ColorViewModel : ObservableObject {
     @Published var preferredName : String = ""
     @Published var colorDescription : String = ""
     
+    
+    
     @Published var colorRed : Double = 0.0
     @Published var colorBlue : Double = 0.0
     @Published var colorGreen : Double = 0.0
@@ -28,8 +30,11 @@ class ColorViewModel : ObservableObject {
     @Published var drawOpacity : Double = 1.0
     @Published var drawUIColor : UIColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
     
+    @Published var selectedColor : Color = Color.blue
+    
 
     @Published var openAddPage = false
+    @Published var openEditPage = false
     
     //Fetched Data
     @Published var colors : [ColorModel] = []
@@ -40,13 +45,31 @@ class ColorViewModel : ObservableObject {
     
     init(){
         fetchData()
+
+        
     }
+    
+    func example(red: Double, blue: Double, green: Double) -> Color{
+                
+        var red = colorRed
+        var green = colorGreen
+        var blue = colorBlue
+        var alpha = colorAlpha
+        
+        selectedColor = Color(red: red, green: green, blue: blue, opacity: alpha)
+        return selectedColor
+    }
+        
     
     func getColorsFromPicker(pickerColor: Color) {
         let colorString = "\(pickerColor)"
         let colorArray: [String] = colorString.components(separatedBy: " ")
         
-        print(colorString)
+        let colorInt = pickerColor
+        
+//        print(colorString)
+//        print(colorArray)
+        print(colorInt)
 
         if colorArray.count > 1 {
             
@@ -90,7 +113,7 @@ class ColorViewModel : ObservableObject {
     func fetchData(){
         guard let dbRef = try? Realm() else {return}
         
-        let results = dbRef.objects(ColorModel.self)
+        let results = dbRef.objects(ColorModel.self).sorted(byKeyPath: "id", ascending: false)
         
         //Display result
         self.colors = results.compactMap({ (color) -> ColorModel in

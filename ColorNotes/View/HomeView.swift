@@ -14,104 +14,129 @@ struct HomeView: View {
     //MARK: - BODY
     var body: some View {
         NavigationView {
-            ScrollView{
-                VStack(spacing:15){
-                    ForEach(modelData.colors) { colorValue in
+            VStack {
+                HStack{
+                    Text("Color Notes")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                    
+                    Button {
+                        modelData.openAddPage.toggle()
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.black)
+                            .frame(width: 30, height: 30)
                         
-                        //Color List
-                        HStack{
-                            RoundedRectangle(cornerRadius: 6)
-                                .fill(Color(UIColor(red: colorValue.colorRed, green: colorValue.colorGreen, blue: colorValue.colorBlue, alpha: colorValue.colorAlpha)))
-                                .frame(width: 140)
-                                .clipped()
+                    }
+                }
+                .padding()
+                
+                Divider()
+                
+                ScrollView{
+                    VStack(spacing:15){
+                        ForEach(modelData.colors) { colorValue in
                             
-                            VStack(alignment: .leading) {
+                            //Color List
+                            HStack{
                                 HStack {
-                                    Text(colorValue.colorCode)
-                                        .font(.headline)
-                                        .fontWeight(.medium)
-
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .fill(Color(UIColor(red: colorValue.colorRed, green: colorValue.colorGreen, blue: colorValue.colorBlue, alpha: colorValue.colorAlpha)))
+                                        .frame(width: 140)
+                                        .clipped()
                                     
-                                    Spacer()
-                                    
-                                    Text("Alpha: \(Int(colorValue.colorAlpha * 100))%")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(colorValue.colorCode)
+                                                .font(.headline)
+                                                .fontWeight(.medium)
+                                            
+                                            
+                                            Spacer()
+                                            
+                                            Text("Alpha: \(Int(colorValue.colorAlpha * 100))%")
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        .padding(.bottom, 6)
+                                        
+                                        
+                                        
+                                        VStack(alignment:.leading) {
+                                            Text(colorValue.preferredName)
+                                                .font(.headline)
+                                                .foregroundColor(.secondary)
+                                            
+                                            
+                                            Text(colorValue.colorDescription)
+                                                .font(.footnote)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        .padding(.top, 8)
+                                        
+                                        
+                                        Spacer()
+                                        
+                                        
+                                        HStack(spacing: 0) {
+                                            Spacer()
+                                            
+                                            Image(systemName: "doc.on.doc")
+                                                .frame(width: 32, height: 32)
+                                            
+                                            Image(systemName: "heart")
+                                                .imageScale(.large)
+                                                .frame(width: 32, height: 32)
+                                        }
+                                    }
+                                    .padding([.leading, .bottom], 12)
+                                    .padding([.top, .trailing])
                                 }
-                                .padding(.bottom, 6)
+                                .frame(height: 150)
+                                .background(Color.primary.colorInvert())
+                                .cornerRadius(6)
+                                .shadow(color: Color.primary.opacity(0.33), radius: 1, x: 2, y: 2)
+                                .padding(.leading, 8)
                                 
-
-                                
-                                VStack(alignment:.leading) {
-                                    Text(colorValue.preferredName)
-                                        .font(.headline)
-                                        .foregroundColor(.secondary)
-
-                                    
-                                    Text(colorValue.colorDescription)
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
+                                Button {
+                                    modelData.updateObject = colorValue
+                                    modelData.openEditPage.toggle()
+                                } label: {
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 8)
                                 }
-                                .padding(.top, 8)
                                 
-    
-                                Spacer()
- 
                                 
-                                HStack(spacing: 0) {
-                                    Spacer()
-                                    
-                                    Image(systemName: "doc.on.doc")
-                                        .frame(width: 32, height: 32)
-                                    
-                                    Image(systemName: "heart")
-                                        .imageScale(.large)
-                                        .frame(width: 32, height: 32)
-                                }
-                            }
-                            .padding([.leading, .bottom], 12)
-                            .padding([.top, .trailing])
-                        }
-                        .frame(height: 150)
-                        .background(Color.primary.colorInvert())
-                        .cornerRadius(6)
-                        .shadow(color: Color.primary.opacity(0.33), radius: 1, x: 2, y: 2)
-                        .padding(.vertical, 8)
-                        
-                        .contentShape(RoundedRectangle(cornerRadius: 10))
-                        .contextMenu {
-                            Button {
-                                modelData.updateObject = colorValue
-                                modelData.openAddPage.toggle()
-                            } label: {
-                                Text("Update Item")
                             }
                             
-                            Button {
-                                modelData.deleteData(object: colorValue)
-                            } label: {
-                                Text("Delete Item")
+                            
+                            .contentShape(RoundedRectangle(cornerRadius: 10))
+                            .contextMenu {
+                                
+                                Button {
+                                    modelData.deleteData(object: colorValue)
+                                } label: {
+                                    Text("Delete Item")
+                                }
+                                
                             }
-
                         }
                     }
+                    
                 }
-                .navigationTitle("Color Notes")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            modelData.openAddPage.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.title2)
-                        }
-                        
-                    }
+                .sheet(isPresented: $modelData.openAddPage) {
+                    AddColorView().environmentObject(modelData)
+                }
+                .sheet(isPresented: $modelData.openEditPage) {
+                    EditColorView().environmentObject(modelData)
                 }
             }
-            .sheet(isPresented: $modelData.openAddPage) {
-                AddColorView().environmentObject(modelData)
-            }
+            
         }
     }
 }

@@ -1,23 +1,28 @@
 //
-//  AddColorView.swift
+//  EditColorView.swift
 //  ColorNotes
 //
-//  Created by JunHyuk Lim on 5/1/2023.
+//  Created by JunHyuk Lim on 6/1/2023.
 //
 
 import SwiftUI
 
-struct AddColorView: View {
+struct EditColorView: View {
     //MARK: - PROPERTIES
     @EnvironmentObject var modelData : ColorViewModel
     @Environment(\.dismiss) var dismiss
+     
+
+ 
     
     //MARK: - BODY
     var body: some View {
+        
+        
         NavigationView {
             VStack {
                 RoundedRectangle(cornerRadius: 6)
-                    .foregroundColor(modelData.swiftUIColor)
+                    .foregroundColor(Color(UIColor(red: modelData.colorRed, green: modelData.colorGreen, blue: modelData.colorBlue, alpha:modelData.colorAlpha)))
                     .frame(maxWidth: .infinity, maxHeight: 180)
                     .padding(.horizontal, 20)
                     .padding(.top,8)
@@ -26,6 +31,7 @@ struct AddColorView: View {
                 
                 List {
                     Section("Select Color") {
+                        
                         ColorPicker("Select Color", selection: $modelData.swiftUIColor)
                             .onChange(of: modelData.swiftUIColor) { newValue in
                                 modelData.getColorsFromPicker(pickerColor: newValue)
@@ -97,8 +103,8 @@ struct AddColorView: View {
     }
 }
 
-struct AddColorView_Previews: PreviewProvider {
+struct EditColorView_Previews: PreviewProvider {
     static var previews: some View {
-        AddColorView().environmentObject(ColorViewModel())
+        EditColorView()
     }
 }
