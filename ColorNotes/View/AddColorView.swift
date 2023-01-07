@@ -10,14 +10,17 @@ import SwiftUI
 struct AddColorView: View {
     //MARK: - PROPERTIES
     @EnvironmentObject var modelData : ColorViewModel
+    @Environment(\.presentationMode) var presentation
     @Environment(\.dismiss) var dismiss
+    
     
     //MARK: - BODY
     var body: some View {
         NavigationView {
             VStack {
                 RoundedRectangle(cornerRadius: 6)
-                    .foregroundColor(modelData.swiftUIColor)
+                    .foregroundColor(Color(UIColor(red: modelData.colorRed, green: modelData.colorGreen, blue: modelData.colorBlue, alpha:modelData.colorAlpha)))
+//                    .foregroundColor(modelData.swiftUIColor)
                     .frame(maxWidth: .infinity, maxHeight: 180)
                     .padding(.horizontal, 20)
                     .padding(.top,8)
@@ -29,6 +32,9 @@ struct AddColorView: View {
                         ColorPicker("Select Color", selection: $modelData.swiftUIColor)
                             .onChange(of: modelData.swiftUIColor) { newValue in
                                 modelData.getColorsFromPicker(pickerColor: newValue)
+                            }
+                            .onAppear {
+                                modelData.selectedColorPickerWithUIColor()
                             }
                     }
                     
@@ -65,7 +71,7 @@ struct AddColorView: View {
                 
                 //Save Button
                 Button{
-                    modelData.addData()
+                    modelData.addData(presentation: presentation)
                     dismiss()
                 } label : {
                     HStack{
@@ -74,7 +80,7 @@ struct AddColorView: View {
                     }
                 }
             } //: VSTACK
-            .navigationTitle((modelData.updateObject != nil) ? "Edit Color" : "Add New Color" )
+            .navigationTitle((modelData.updateObject == nil) ? "Add New Color" : "Edit the Color")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

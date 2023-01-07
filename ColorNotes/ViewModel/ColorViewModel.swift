@@ -16,59 +16,50 @@ class ColorViewModel : ObservableObject {
     @Published var preferredName : String = ""
     @Published var colorDescription : String = ""
     
-    
-    
-    @Published var colorRed : Double = 0.0
+    @Published var colorRed : Double = 1.0
     @Published var colorBlue : Double = 0.0
     @Published var colorGreen : Double = 0.0
     @Published var colorAlpha : Double = 0.0
     @Published var colorCode : String = ""
     @Published var isFavorited : Bool = false
     
-    //CHECK THIS PART
+    //Extension For Color Properties
     @Published var swiftUIColor : Color = Color.red
     @Published var drawOpacity : Double = 1.0
     @Published var drawUIColor : UIColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-    
     @Published var selectedColor : Color = Color.blue
     
 
+    //View Page
     @Published var openAddPage = false
-    @Published var openEditPage = false
-    
+
     //Fetched Data
     @Published var colors : [ColorModel] = []
     
     //Data Updation
     @Published var updateObject : ColorModel?
     
-    
+    //MARK: - INITIALISE
     init(){
         fetchData()
        
-
-        
     }
     
+    //MARK: - FUNCTION
     func selectedColorPickerWithUIColor() {
         
         let r: Double = Double(colorRed)
         let g: Double = Double(colorGreen)
         let b: Double = Double(colorBlue)
-        swiftUIColor = Color(red: r, green: g, blue: b, opacity: drawOpacity)
+        let a: Double = Double(colorAlpha)
+        swiftUIColor = Color(red: r, green: g, blue: b, opacity: a)
     }
-    
-
-        
-    
+            
     func getColorsFromPicker(pickerColor: Color) {
         let colorString = "\(pickerColor)"
         let colorArray: [String] = colorString.components(separatedBy: " ")
         
         let colorInt = pickerColor
-        
-//        print(colorString)
-//        print(colorArray)
         print(colorInt)
 
         if colorArray.count > 1 {
@@ -124,7 +115,8 @@ class ColorViewModel : ObservableObject {
     }
     
     //Realm - Adding New Data
-    func addData() {
+    func addData(presentation: Binding<PresentationMode>) {
+        
         let color = ColorModel()
         color.preferredName = preferredName
         color.colorDescription = colorDescription
@@ -151,13 +143,17 @@ class ColorViewModel : ObservableObject {
             availableObject.colorRed = colorRed
             availableObject.colorBlue = colorBlue
             availableObject.colorGreen = colorGreen
+            availableObject.colorAlpha = colorAlpha
+    
 
         })
         //Updating UI
         fetchData()
+        
+        presentation.wrappedValue.dismiss()
     }
     
-    //Realm - Deleting Data
+    //Deleting Data
     func deleteData(object : ColorModel) {
         
         guard let dbRef = try? Realm() else { return }
@@ -185,13 +181,14 @@ class ColorViewModel : ObservableObject {
     }
     
     func deInitData(){
+        updateObject = nil
         preferredName = ""
         colorDescription = ""
         colorCode = ""
-        colorRed = 1.0
-        colorGreen = 0.0
-        colorBlue = 0.0
-        colorAlpha = 1.0
+//        colorRed = 1.0
+//        colorGreen = 0.0
+//        colorBlue = 0.0
+//        colorAlpha = 1.0
     }
     
 }

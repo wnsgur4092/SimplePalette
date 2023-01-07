@@ -39,7 +39,7 @@ struct HomeView: View {
                 
                 ScrollView{
                     VStack(spacing:15){
-                        ForEach(modelData.colors) { colorValue in
+                        ForEach(modelData.colors, id:\.self) { colorValue in
                             
                             //Color List
                             HStack{
@@ -104,11 +104,21 @@ struct HomeView: View {
                                 
                                 Button {
                                     modelData.updateObject = colorValue
-                                    modelData.openEditPage.toggle()
+                                    modelData.openAddPage.toggle()
+                                    
+                                    
+                                    print(modelData.colorRed)
+                                    
                                 } label: {
                                     Image(systemName: "chevron.right")
                                         .foregroundColor(.black)
                                         .padding(.trailing, 8)
+                                }
+                                .onTapGesture {
+                                    modelData.selectedColor = modelData.swiftUIColor
+                                }
+                                .onAppear {
+                                    modelData.selectedColorPickerWithUIColor()
                                 }
                                 
                                 
@@ -131,9 +141,6 @@ struct HomeView: View {
                 }
                 .sheet(isPresented: $modelData.openAddPage) {
                     AddColorView().environmentObject(modelData)
-                }
-                .sheet(isPresented: $modelData.openEditPage) {
-                    EditColorView().environmentObject(modelData)
                 }
             }
             

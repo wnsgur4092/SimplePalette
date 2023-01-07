@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BF080700296683BA0039CB76 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0806FF296683BA0039CB76 /* ColorModel.swift */; };
-		BF0807042967FF760039CB76 /* EditColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0807032967FF760039CB76 /* EditColorView.swift */; };
 		BF08070629682AF00039CB76 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08070529682AF00039CB76 /* Constant.swift */; };
 		BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */; };
 		BF7F1A6C29667CAA00826BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6B29667CAA00826BDB /* ContentView.swift */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		BF0806FF296683BA0039CB76 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
-		BF0807032967FF760039CB76 /* EditColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditColorView.swift; sourceTree = "<group>"; };
 		BF08070529682AF00039CB76 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF7F1A6629667CAA00826BDB /* ColorNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNotesApp.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				BF7F1A6B29667CAA00826BDB /* ContentView.swift */,
 				BF7F1A8029667D4900826BDB /* HomeView.swift */,
 				BF7F1A8229667DCA00826BDB /* AddColorView.swift */,
-				BF0807032967FF760039CB76 /* EditColorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,7 +195,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0807042967FF760039CB76 /* EditColorView.swift in Sources */,
 				BF7F1A8329667DCA00826BDB /* AddColorView.swift in Sources */,
 				BF7F1A8129667D4900826BDB /* HomeView.swift in Sources */,
 				BF08070629682AF00039CB76 /* Constant.swift in Sources */,
