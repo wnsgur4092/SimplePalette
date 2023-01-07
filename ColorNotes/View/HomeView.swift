@@ -41,8 +41,8 @@ struct HomeView: View {
                 ScrollView{
                     
                     VStack(spacing:15)
-                     {
-                        ForEach(modelData.colors, id:\.self) { colorValue in
+                    {
+                        ForEach(modelData.colors) { colorValue in
                             
                             //Color List
                             HStack{
@@ -50,29 +50,39 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 6)
                                         .fill(Color(UIColor(red: colorValue.colorRed, green: colorValue.colorGreen, blue: colorValue.colorBlue, alpha: colorValue.colorAlpha)))
                                         .frame(width: 140)
-                                        .clipped()
+//                                        .clipped()
+                                        
                                     
-                                    VStack(alignment: .leading) {
+                                    VStack(alignment: .leading, spacing: 4) {
                                         HStack {
+                                            
                                             Text(colorValue.colorCode)
                                                 .font(.headline)
-                                                .fontWeight(.medium)
-                                            
+                                                .fontWeight(.semibold)
                                             
                                             Spacer()
                                             
-                                            Text("Alpha: \(Int(colorValue.colorAlpha * 100))%")
-                                                .font(.subheadline)
-                                                .foregroundColor(.secondary)
+                                            Button {
+                                                UIPasteboard.general.string = colorValue.colorCode
+                                            } label: {
+                                                Image(systemName: "doc.on.doc")
+                                                    .frame(width: 16, height: 16)
+                                                    .foregroundColor(.black)
+                                            }
                                         }
-                                        .padding(.bottom, 6)
+                                        .padding(.top, 6)
+                                        
+                                        Text("Alpha: \(Int(colorValue.colorAlpha * 100))%")
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
                                         
                                         
                                         
                                         VStack(alignment:.leading) {
                                             Text(colorValue.preferredName)
                                                 .font(.headline)
-                                                .foregroundColor(.secondary)
+                                                .foregroundColor(.primary)
+                                                .padding(.bottom, 2)
                                             
                                             
                                             Text(colorValue.colorDescription)
@@ -86,22 +96,33 @@ struct HomeView: View {
                                         
                                         
                                         HStack(spacing: 0) {
-                                            Spacer()
                                             
                                             Button {
-                                                UIPasteboard.general.string = colorValue.colorCode
+                                            
                                             } label: {
-                                                Image(systemName: "doc.on.doc")
-                                                    .frame(width: 32, height: 32)
+                                                Image(systemName: modelData.isFavorited ? "heart.fill" : "heart")
+                                                    .foregroundColor(.red)
+                                                    
                                             }
 
+                                       
+                                    
+                                        
                                             
-
                                             
-                                            Image(systemName: "heart")
-                                                .imageScale(.large)
-                                                .frame(width: 32, height: 32)
+                                            Spacer()
+                                            
+                                            Button(action: {
+                                                withAnimation {
+                                                    modelData.deleteData(object: colorValue)
+                                                }
+                                                
+                                            }, label: {
+                                                Image(systemName: "trash")
+                                                    .foregroundColor(.red)
+                                            })
                                         }
+                                        .padding(.bottom, 10)
                                     }
                                     .padding([.leading, .bottom], 12)
                                     .padding([.top, .trailing])
@@ -133,22 +154,9 @@ struct HomeView: View {
                                 
                                 
                             }
-                            Button(action: {
-                                modelData.deleteData(object: colorValue)
-                            }, label: {
-                                Image(systemName: "trash")
-                            })
                             
-                            .contentShape(RoundedRectangle(cornerRadius: 10))
-                            .contextMenu {
-                                
-                                Button {
-                                    modelData.deleteData(object: colorValue)
-                                } label: {
-                                    Text("Delete Item")
-                                }
-                                
-                            }
+                            
+                            
                         }
                     }
                     

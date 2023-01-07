@@ -48,23 +48,23 @@ struct AddColorView: View {
                                 Image(systemName: "doc.on.doc")
                                     .foregroundColor(.black)
                             }
-
+                            
                         }
-  
+                        
                     }
                     
                     
                     Section {
                         //INPUT preferred Name -> "COLOR NAME"
                         TextField("Enter Color's name", text: $modelData.preferredName, axis: .vertical)
-                                                     
+                        
                         
                         //INPUT colorDescription -> "COLOR DESCRIPTION"
-//                        ScrollView(.vertical, showsIndicators: true) {
-                            TextField("Enter Color's description", text: $modelData.colorDescription, axis: .vertical)
+                        //                        ScrollView(.vertical, showsIndicators: true) {
+                        TextField("Enter Color's description", text: $modelData.colorDescription, axis: .vertical)
                             .lineLimit(2...12)
                             .frame(minHeight: 150)
-//                        }
+                        //                        }
                     } header: {
                         Text("Optional")
                     }
@@ -75,8 +75,9 @@ struct AddColorView: View {
                 
                 //Save Button
                 Button{
-                    modelData.addData()
-                    dismiss()
+                        modelData.addData()
+                        dismiss()
+
                 } label : {
                     Capsule()
                         .fill(Color.black)
@@ -85,10 +86,11 @@ struct AddColorView: View {
                             .font(.system(size:20)).fontWeight(.medium).foregroundColor(.white))
                         .padding(.vertical,8)
                 }
-
+                
+                
             } //: VSTACK
             .background(Color(UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1)))
-  
+            
             .navigationTitle((modelData.updateObject == nil) ? "Add New Color" : "Edit the Color")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
