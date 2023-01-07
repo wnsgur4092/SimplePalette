@@ -13,7 +13,7 @@ import RealmSwift
 
 class ColorModel : Object, Identifiable {
     
-    @Persisted(primaryKey : true) var id : ObjectId
+    @Persisted(primaryKey: true) var colorId : ObjectId
     @Persisted var preferredName : String = ""
     @Persisted var colorDescription : String = ""
     @Persisted var colorRed : Double = 0.0
@@ -23,6 +23,7 @@ class ColorModel : Object, Identifiable {
     @Persisted var colorCode : String = ""
     @Persisted var isFavorited : Bool = false
     
-    
-    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

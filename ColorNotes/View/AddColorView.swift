@@ -10,7 +10,6 @@ import SwiftUI
 struct AddColorView: View {
     //MARK: - PROPERTIES
     @EnvironmentObject var modelData : ColorViewModel
-    @Environment(\.presentationMode) var presentation
     @Environment(\.dismiss) var dismiss
     
     
@@ -18,13 +17,12 @@ struct AddColorView: View {
     var body: some View {
         NavigationView {
             VStack {
-                RoundedRectangle(cornerRadius: 6)
-                    .foregroundColor(Color(UIColor(red: modelData.colorRed, green: modelData.colorGreen, blue: modelData.colorBlue, alpha:modelData.colorAlpha)))
-//                    .foregroundColor(modelData.swiftUIColor)
-                    .frame(maxWidth: .infinity, maxHeight: 180)
-                    .padding(.horizontal, 20)
-                    .padding(.top,8)
                 
+                Circle()
+                    .foregroundColor(Color(UIColor(red: modelData.colorRed, green: modelData.colorGreen, blue: modelData.colorBlue, alpha:modelData.colorAlpha)))
+                    .frame(maxHeight: 140)
+                    .padding(.horizontal, 12)
+                    .padding(.top,8)
                 
                 
                 List {
@@ -45,9 +43,10 @@ struct AddColorView: View {
                             Spacer()
                             
                             Button {
-                                
+                                UIPasteboard.general.string = modelData.colorCode
                             } label: {
                                 Image(systemName: "doc.on.doc")
+                                    .foregroundColor(.black)
                             }
 
                         }
@@ -57,29 +56,39 @@ struct AddColorView: View {
                     
                     Section {
                         //INPUT preferred Name -> "COLOR NAME"
-                        TextField("Enter Color Name", text: $modelData.preferredName)
+                        TextField("Enter Color's name", text: $modelData.preferredName, axis: .vertical)
+                                                     
                         
                         //INPUT colorDescription -> "COLOR DESCRIPTION"
-                        TextField("Enter Description", text: $modelData.colorDescription)
-                            .frame(minHeight: 120)
+//                        ScrollView(.vertical, showsIndicators: true) {
+                            TextField("Enter Color's description", text: $modelData.colorDescription, axis: .vertical)
+                            .lineLimit(2...12)
+                            .frame(minHeight: 150)
+//                        }
                     } header: {
                         Text("Optional")
                     }
-                    .listStyle(GroupedListStyle())
+                    
+                    .listStyle(.insetGrouped)
                     
                 }
                 
                 //Save Button
                 Button{
-                    modelData.addData(presentation: presentation)
+                    modelData.addData()
                     dismiss()
                 } label : {
-                    HStack{
-                        Image(systemName: "plus.app.fill")
-                        Text("Save")
-                    }
+                    Capsule()
+                        .fill(Color.black)
+                        .frame(maxWidth: 120, minHeight: 30, maxHeight: 55)
+                        .overlay(Text("Save".uppercased())
+                            .font(.system(size:20)).fontWeight(.medium).foregroundColor(.white))
+                        .padding(.vertical,8)
                 }
+
             } //: VSTACK
+            .background(Color(UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1)))
+  
             .navigationTitle((modelData.updateObject == nil) ? "Add New Color" : "Edit the Color")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

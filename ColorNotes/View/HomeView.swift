@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct HomeView: View {
     //MARK: - PROPERTIES
-    @StateObject var modelData = ColorViewModel()
+    @ObservedObject var modelData = ColorViewModel()
     
     //MARK: - BODY
     var body: some View {
@@ -38,7 +39,9 @@ struct HomeView: View {
                 Divider()
                 
                 ScrollView{
-                    VStack(spacing:15){
+                    
+                    VStack(spacing:15)
+                     {
                         ForEach(modelData.colors, id:\.self) { colorValue in
                             
                             //Color List
@@ -85,8 +88,15 @@ struct HomeView: View {
                                         HStack(spacing: 0) {
                                             Spacer()
                                             
-                                            Image(systemName: "doc.on.doc")
-                                                .frame(width: 32, height: 32)
+                                            Button {
+                                                UIPasteboard.general.string = colorValue.colorCode
+                                            } label: {
+                                                Image(systemName: "doc.on.doc")
+                                                    .frame(width: 32, height: 32)
+                                            }
+
+                                            
+
                                             
                                             Image(systemName: "heart")
                                                 .imageScale(.large)
@@ -123,7 +133,11 @@ struct HomeView: View {
                                 
                                 
                             }
-                            
+                            Button(action: {
+                                modelData.deleteData(object: colorValue)
+                            }, label: {
+                                Image(systemName: "trash")
+                            })
                             
                             .contentShape(RoundedRectangle(cornerRadius: 10))
                             .contextMenu {
