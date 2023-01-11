@@ -9,28 +9,36 @@
 /* Begin PBXBuildFile section */
 		BF080700296683BA0039CB76 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0806FF296683BA0039CB76 /* ColorModel.swift */; };
 		BF08070629682AF00039CB76 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08070529682AF00039CB76 /* Constant.swift */; };
+		BF7AE940296E9DD00033F792 /* ColorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE93F296E9DD00033F792 /* ColorDetailViewModel.swift */; };
+		BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */; };
+		BF7AE944296E9E9E0033F792 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */; };
+		BF7AE94C296EA6270033F792 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE94B296EA6270033F792 /* ColorCell.swift */; };
+		BF7AE94F296ED7B40033F792 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE94E296ED7B40033F792 /* Home.swift */; };
 		BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */; };
-		BF7F1A6C29667CAA00826BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6B29667CAA00826BDB /* ContentView.swift */; };
 		BF7F1A6E29667CAB00826BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F1A6D29667CAB00826BDB /* Assets.xcassets */; };
 		BF7F1A7129667CAB00826BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F1A7029667CAB00826BDB /* Preview Assets.xcassets */; };
 		BF7F1A7A29667CC500826BDB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BF7F1A7929667CC500826BDB /* Realm */; };
 		BF7F1A7C29667CC500826BDB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BF7F1A7B29667CC500826BDB /* RealmSwift */; };
-		BF7F1A8129667D4900826BDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* HomeView.swift */; };
-		BF7F1A8329667DCA00826BDB /* AddColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* AddColorView.swift */; };
-		BF7F1A8529667E2600826BDB /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorViewModel.swift */; };
+		BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* ColorListView.swift */; };
+		BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* ColorAddView.swift */; };
+		BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF0806FF296683BA0039CB76 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		BF08070529682AF00039CB76 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BF7AE93F296E9DD00033F792 /* ColorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewModel.swift; sourceTree = "<group>"; };
+		BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddViewModel.swift; sourceTree = "<group>"; };
+		BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
+		BF7AE94B296EA6270033F792 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		BF7AE94E296ED7B40033F792 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		BF7F1A6629667CAA00826BDB /* ColorNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNotesApp.swift; sourceTree = "<group>"; };
-		BF7F1A6B29667CAA00826BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF7F1A6D29667CAB00826BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF7F1A7029667CAB00826BDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BF7F1A8029667D4900826BDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		BF7F1A8229667DCA00826BDB /* AddColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorView.swift; sourceTree = "<group>"; };
-		BF7F1A8429667E2600826BDB /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		BF7F1A8029667D4900826BDB /* ColorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListView.swift; sourceTree = "<group>"; };
+		BF7F1A8229667DCA00826BDB /* ColorAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddView.swift; sourceTree = "<group>"; };
+		BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF7AE94D296EA8470033F792 /* Color List */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AE94B296EA6270033F792 /* ColorCell.swift */,
+				BF7F1A8029667D4900826BDB /* ColorListView.swift */,
+			);
+			path = "Color List";
+			sourceTree = "<group>";
+		};
+		BF7AE950296EFF060033F792 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F1A8229667DCA00826BDB /* ColorAddView.swift */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
 		BF7F1A5D29667CAA00826BDB = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */,
-				BF7F1A7D29667D1D00826BDB /* ViewModel */,
 				BF7F1A7E29667D2200826BDB /* Model */,
+				BF7F1A7D29667D1D00826BDB /* ViewModel */,
 				BF7F1A7F29667D2800826BDB /* View */,
 				BF7F1A6D29667CAB00826BDB /* Assets.xcassets */,
 				BF08070529682AF00039CB76 /* Constant.swift */,
@@ -95,7 +120,9 @@
 		BF7F1A7D29667D1D00826BDB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				BF7F1A8429667E2600826BDB /* ColorViewModel.swift */,
+				BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */,
+				BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */,
+				BF7AE93F296E9DD00033F792 /* ColorDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -111,9 +138,10 @@
 		BF7F1A7F29667D2800826BDB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BF7F1A6B29667CAA00826BDB /* ContentView.swift */,
-				BF7F1A8029667D4900826BDB /* HomeView.swift */,
-				BF7F1A8229667DCA00826BDB /* AddColorView.swift */,
+				BF7AE94E296ED7B40033F792 /* Home.swift */,
+				BF7AE94D296EA8470033F792 /* Color List */,
+				BF7AE950296EFF060033F792 /* Creation */,
+				BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,11 +223,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF7F1A8329667DCA00826BDB /* AddColorView.swift in Sources */,
-				BF7F1A8129667D4900826BDB /* HomeView.swift in Sources */,
+				BF7AE94C296EA6270033F792 /* ColorCell.swift in Sources */,
+				BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */,
+				BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */,
+				BF7AE94F296ED7B40033F792 /* Home.swift in Sources */,
 				BF08070629682AF00039CB76 /* Constant.swift in Sources */,
-				BF7F1A8529667E2600826BDB /* ColorViewModel.swift in Sources */,
-				BF7F1A6C29667CAA00826BDB /* ContentView.swift in Sources */,
+				BF7AE940296E9DD00033F792 /* ColorDetailViewModel.swift in Sources */,
+				BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */,
+				BF7AE944296E9E9E0033F792 /* ColorDetailView.swift in Sources */,
+				BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */,
 				BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */,
 				BF080700296683BA0039CB76 /* ColorModel.swift in Sources */,
 			);
@@ -327,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ColorNotes/Preview Content\"";
@@ -357,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ColorNotes/Preview Content\"";
