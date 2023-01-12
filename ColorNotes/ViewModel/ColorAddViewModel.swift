@@ -191,7 +191,7 @@ class ColorAddViewModel : ObservableObject {
             
             // Update hex
             let rgb:Int = (Int)(round(r*255))<<16 | (Int)(round(g*255))<<8 | (Int)(round(b*255))<<0
-            var hexadecimal = String(format: "#%06X", rgb)
+            let hexadecimal = String(format: "#%06X", rgb)
             
             colorCode = hexadecimal
         }

@@ -70,7 +70,7 @@ struct ColorCell: View {
         .frame(maxWidth: 200, maxHeight: 280)
         .background(Color.primary.colorInvert())
         .cornerRadius(10)
-        .shadow(color: Color.primary.opacity(0.33), radius: 1, x: 5, y: 5)
+        .shadow(color: Color.primary.opacity(0.15), radius: 1, x: 5, y: 5)
 
         
         

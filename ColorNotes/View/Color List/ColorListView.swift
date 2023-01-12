@@ -42,10 +42,10 @@ struct ColorListView: View {
                             }
                         } header: {
                             HStack(spacing: 7) {
-                                Image(systemName: "mappin.and.ellipse")
-                                    .renderingMode(.original)
+                                Image(systemName: "pin.fill")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(Color.gray)
                                     .frame(height: 23)
                                     .fontWeight(.bold)
                                 Text(key)
