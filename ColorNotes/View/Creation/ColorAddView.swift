@@ -11,7 +11,7 @@ import RealmSwift
 struct ColorAddView: View {
     //MARK: - PROPERTIES
     //    @EnvironmentObject var vm : ColorListViewModel
-    //    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     @StateObject var vm : ColorAddViewModel
     
     
@@ -93,7 +93,7 @@ struct ColorAddView: View {
                     .listRowBackground(Color(UIColor.clear))
                     .background(.clear)
                 }
-
+                
             }
             
             .navigationTitle("Add New Color")
@@ -101,9 +101,8 @@ struct ColorAddView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        //                                dismiss()
-                        //                                vm.setUpInitialData()
-                        //                                vm.deInitData()
+                        dismiss()
+                        
                     } label: {
                         Image(systemName: "arrow.left")
                             .foregroundColor(.black)

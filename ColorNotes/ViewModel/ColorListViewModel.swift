@@ -9,10 +9,14 @@ import SwiftUI
 import RealmSwift
 import Combine
 
+
 class ColorListViewModel : ObservableObject {
     
+    //MARK: - PREVIEW
     @Published var colors : [ColorModel] = []
     @Published var dic : [String : [ColorModel]] = [:]
+    
+ 
     
     var subscription = Set<AnyCancellable>()
     

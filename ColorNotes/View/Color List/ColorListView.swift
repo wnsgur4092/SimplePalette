@@ -8,10 +8,11 @@
 import SwiftUI
 import RealmSwift
 
+
 struct ColorListView: View {
     //MARK: - PROPERTIES
     @ObservedObject var vm : ColorListViewModel
-    
+        
     let layout : [GridItem] = [
         GridItem(.flexible()),
     ]
@@ -30,9 +31,8 @@ struct ColorListView: View {
                                 HStack(spacing: 10) {
                                     ForEach(orderedItems) { item in
                                         NavigationLink {
-//                                            let vm = PlaceDetailViewModel(
-//                                                places: $vm.places, place: item)
-//                                            PlaceDetailView(vm: vm)
+                                            let vm = ColorDetailViewModel(colors: $vm.colors, color: item)
+                                            ColorDetailView(vm:vm)
                                         } label: {
                                             ColorCell(color: item)
                                                 .padding(8)
@@ -64,6 +64,8 @@ struct ColorListView: View {
             }
         }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
     }
+    
+
 }
 
 //MARK: - PREVIEW

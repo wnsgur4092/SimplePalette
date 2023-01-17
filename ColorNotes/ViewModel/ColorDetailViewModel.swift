@@ -9,14 +9,20 @@ import SwiftUI
 import RealmSwift
 
 class ColorDetailViewModel : ObservableObject{
+    //MARK: - PROPERTIES
     @Published var colors : Binding<[ColorModel]>
     @Published var color : ColorModel
     
+
+
+    
+    //MARK: - INITIALISE
     init(colors: Binding<[ColorModel]>, color: ColorModel) {
         self.colors = colors
         self.color = color
     }
     
+    //MARK: - FUNCTION
     func deleteColorData(){
         let predicate = NSPredicate(format: "id == %@", color.id as CVarArg)
         
@@ -39,6 +45,7 @@ class ColorDetailViewModel : ObservableObject{
             colors.wrappedValue = savedColor.compactMap({$0})
         }
     }
+    
 }
 
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF080700296683BA0039CB76 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0806FF296683BA0039CB76 /* ColorModel.swift */; };
 		BF08070629682AF00039CB76 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08070529682AF00039CB76 /* Constant.swift */; };
+		BF336EDE2976B65600F31A54 /* SSToastMessage in Frameworks */ = {isa = PBXBuildFile; productRef = BF336EDD2976B65600F31A54 /* SSToastMessage */; };
 		BF7AE940296E9DD00033F792 /* ColorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE93F296E9DD00033F792 /* ColorDetailViewModel.swift */; };
 		BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */; };
 		BF7AE944296E9E9E0033F792 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */; };
@@ -48,6 +49,7 @@
 			files = (
 				BF7F1A7C29667CC500826BDB /* RealmSwift in Frameworks */,
 				BF7F1A7A29667CC500826BDB /* Realm in Frameworks */,
+				BF336EDE2976B65600F31A54 /* SSToastMessage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +167,7 @@
 			packageProductDependencies = (
 				BF7F1A7929667CC500826BDB /* Realm */,
 				BF7F1A7B29667CC500826BDB /* RealmSwift */,
+				BF336EDD2976B65600F31A54 /* SSToastMessage */,
 			);
 			productName = ColorNotes;
 			productReference = BF7F1A6629667CAA00826BDB /* ColorNotes.app */;
@@ -196,6 +199,7 @@
 			mainGroup = BF7F1A5D29667CAA00826BDB;
 			packageReferences = (
 				BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */,
 			);
 			productRefGroup = BF7F1A6729667CAA00826BDB /* Products */;
 			projectDirPath = "";
@@ -440,6 +444,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimformSolutionsPvtLtd/SSToastMessage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -451,6 +463,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF336EDD2976B65600F31A54 /* SSToastMessage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */;
+			productName = SSToastMessage;
+		};
 		BF7F1A7929667CC500826BDB /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF7F1A7729667CBC00826BDB /* XCRemoteSwiftPackageReference "realm-swift" */;

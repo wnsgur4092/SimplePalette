@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+
 struct ColorCell: View {
     //MARK: - PROPERTIES
     var color : ColorModel
+    
     
     //MARK: - BODY
     var body: some View {
@@ -38,12 +40,14 @@ struct ColorCell: View {
                     Button {
                         
                     } label: {
-                        Image(systemName: "doc.on.doc")
+                        Image(systemName: "heart")
+                            .renderingMode(.original)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
                             .foregroundColor(.black)
                     }
+
                 }
                 
                 
@@ -72,11 +76,14 @@ struct ColorCell: View {
         .cornerRadius(10)
         .shadow(color: Color.primary.opacity(0.15), radius: 1, x: 5, y: 5)
 
-        
-        
     }
+    
+    
+    //MARK: - EXTENSION
+
 }
 
+//MARK: - PREVIEW
 struct ColorCell_Previews: PreviewProvider {
     static var previews: some View {
         
