@@ -14,19 +14,42 @@ struct ColorAddView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var vm : ColorAddViewModel
     
+    @FocusState private var focusField : Field?
+    
+    enum Field : Hashable {
+        case cateogry, colorName, colorDescription
+    }
     
     //    //MARK: - BODY
     var body: some View {
         NavigationView {
             VStack {
-                Circle()
-                    .foregroundColor(Color(UIColor(red: vm.colorRed, green: vm.colorGreen, blue: vm.colorBlue, alpha:vm.colorAlpha)))
-                    .frame(maxHeight: 140)
-                    .padding(.horizontal, 12)
-                    .padding(.top,8)
-                
-                
                 Form {
+                    Section("Preview") {
+                        
+                        HStack {
+                            Spacer()
+                            VStack{
+                                Rectangle()
+                                    .foregroundColor(Color(UIColor(red: vm.colorRed, green: vm.colorGreen, blue: vm.colorBlue, alpha:vm.colorAlpha)))
+                                
+                                    .frame(width:180,height: 200)
+                                    .cornerRadius(10)
+                                    .padding(.horizontal, 6)
+                                    .padding(.top, 6)
+                                
+                                
+                            }
+                            .frame(maxWidth: 200, maxHeight: 280)
+                            .background(Color.primary.colorInvert())
+                            .cornerRadius(10)
+                            .shadow(color: Color.primary.opacity(0.15), radius: 1, x: 5, y: 5)
+                            Spacer()
+                        }
+                        .padding(.bottom, 10)
+                    }
+                    
+                    
                     Section("Select Color") {
                         ColorPicker("Select Color", selection: $vm.swiftUIColor)
                             .onChange(of: vm.swiftUIColor) { newValue in
@@ -36,17 +59,7 @@ struct ColorAddView: View {
                     
                     Section("Hexadecimal"){
                         HStack{
-                            Text("\(vm.colorCode)").bold()
-                            
-                            Spacer()
-                            
-                            Button {
-                                UIPasteboard.general.string = vm.colorCode
-                            } label: {
-                                Image(systemName: "doc.on.doc")
-                                    .foregroundColor(.black)
-                            }
-                            
+                            Text("\(vm.colorCode)")
                         }
                         
                     }
@@ -54,20 +67,34 @@ struct ColorAddView: View {
                     
                     Section {
                         TextField("Enter Color's Cateogry", text: $vm.colorCategory)
+                            .focused($focusField, equals: .cateogry)
+                            .onTapGesture {
+                                focusField = .cateogry
+                            }
                     } header:{
                         Text("Category")
                     }
                     
                     Section {
                         TextField("Enter Color's name", text: $vm.preferredName, axis: .vertical)
+                            .focused($focusField, equals: .colorName)
+                            .onTapGesture {
+                                focusField = .colorName
+                            }
+                        
                     } header: {
                         Text("Color Name")
                     }
                     
                     Section {
                         TextField("Enter Color's description", text: $vm.colorDescription, axis: .vertical)
-                            .lineLimit(2...12)
-                            .frame(minHeight: 150)
+                            .focused($focusField, equals: .colorDescription)
+                            .onTapGesture {
+                                focusField = .colorDescription
+                            }
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(5...5)
+                            .frame(minHeight: 100)
                     } header: {
                         Text("Color Description")
                     }
@@ -82,10 +109,11 @@ struct ColorAddView: View {
                                 Text("Save".uppercased())
                             }
                             .foregroundColor(.white)
-                            .frame(width:300, height: 60)
-                            .background(Color.green)
+                            .frame(width:200, height: 60)
+                            .background(Color("LogoColor"))
                             .cornerRadius(30)
                             .font(.system(size:20)).fontWeight(.medium).foregroundColor(.white)
+                            .shadow(color: Color.primary.opacity(0.15), radius: 1, x: 5, y: 5)
                             
                             Spacer()
                         }
@@ -113,6 +141,7 @@ struct ColorAddView: View {
         }
     }
 }
+
 
 
 //MARK: - PREVIEW

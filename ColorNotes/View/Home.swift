@@ -15,15 +15,21 @@ struct Home: View {
     var body: some View {
         NavigationView {
             ColorListView(vm: vm)
-            
-            
                 .toolbar {
                     ToolbarItem(placement:.principal) {
                         
                         HStack{
+                            Image("Logo")
+                                .resizable()
+                                .scaledToFit()
+                                .fontWeight(.bold)
+                                .frame(width: 32.0)
+                                
+                            
                             Text("Color Notes")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
+
                             
                             Spacer()
                             
@@ -34,18 +40,20 @@ struct Home: View {
                                 Image(systemName: "plus.circle")
                                     .resizable()
                                     .scaledToFit()
-                                    .foregroundColor(.black)
                                     .frame(width: 30, height: 30)
+
                                 
                             }
                         }
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                        .foregroundColor(.white)
+                        .shadow(color: Color.primary.opacity(0.20), radius: 1, x: 3, y: 3)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
                     }
                 }
                 .accentColor(Color(.white))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(
-                    Color(.white),
+                    Color("LogoColor"),
                     for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
         }

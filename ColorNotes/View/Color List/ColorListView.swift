@@ -28,7 +28,7 @@ struct ColorListView: View {
                             let orderedItems = items.sorted(by: {$0.addDate > $1.addDate})
                             
                             ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 10) {
+                                HStack(alignment: .center, spacing: 10) {
                                     ForEach(orderedItems) { item in
                                         NavigationLink {
                                             let vm = ColorDetailViewModel(colors: $vm.colors, color: item)

@@ -22,101 +22,126 @@ struct ColorDetailView: View {
     var body: some View {
         VStack{
             ScrollView{
-                VStack(alignment: .center, spacing: 0) {
+                VStack{
                     Rectangle()
                         .fill(Color(UIColor(red: vm.color.colorRed, green: vm.color.colorGreen, blue: vm.color.colorBlue, alpha: vm.color.colorAlpha)))
-                        .background(Color.primary.colorInvert())
-                        .cornerRadius(10)
-                        .shadow(color: Color.primary.opacity(0.15), radius: 1, x: 5, y: 5)
-                        .frame(width: 300, height:200, alignment: .center)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical,12)
                     
-                    Spacer().frame(height: 15)
-                    HStack(alignment: .center, spacing: 3) {
-                        Spacer()
-                        Text("Opacity: \(Int(vm.color.colorAlpha * 100))%")
-                        Spacer()
+                        .frame(width:180,height: 200)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 6)
+                        .padding(.top, 6)
+                    
+                    
+                    Divider()
+                    
+                    VStack{
+                        
+                        
+                        HStack {
+                            
+                            Text("Opacity: \(Int(vm.color.colorAlpha * 100))%")
+                                .font(.footnote)
+                                .foregroundColor(Color.gray)
+                                .multilineTextAlignment(.leading)
+                            
+                            Spacer()
+                            
+                            
+                        }
                     }
                     
-                    Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+                    .padding(.vertical,4)
+                    .padding(.bottom, 4)
+                    .padding(.horizontal, 12)
+                    
+                }
+                .frame(maxWidth: 200, maxHeight: 280)
+                .background(Color.primary.colorInvert())
+                .cornerRadius(10)
+                .shadow(color: Color.primary.opacity(0.15), radius: 1, x: 5, y: 5)
+                .padding(.top,8)
+                
+                
+                
+                Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+                
+                HStack(alignment: .center) {
+                    Image(systemName: "tag")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 23)
+                    
+                    Spacer().frame(width: 15)
+                    
+                    Text(vm.color.colorCode)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                    
+                    Button {
+                        UIPasteboard.general.string = vm.color.colorCode
+                        copyingAlert = true
+                    } label: {
+                        Image(systemName: "doc.on.doc")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16)
+                            .foregroundColor(.black)
+                    }
+                    
+                    
+                }
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                
+                Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+                
+                VStack(alignment: .leading) {
                     
                     HStack(alignment: .center) {
-                        Image(systemName: "tag")
+                        Image(systemName: "pencil")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 23)
                         
-                        Spacer().frame(width: 15)
-                        Text(vm.color.colorCode)
-                        
-                        Spacer()
-                        
-                        Button {
-                            UIPasteboard.general.string = vm.color.colorCode
-                            copyingAlert = true
-                        } label: {
-                            Image(systemName: "doc.on.doc")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 16)
-                                .foregroundColor(.black)
-                        }
-                        
-                        
+                        Spacer().frame(width: 13)
+                        Text("Color Name")
+                            .fontWeight(.bold)
+                            .frame(alignment: .leading)
                     }
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                     
-                    Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+                    Spacer().frame(height:15)
+                    Text(vm.color.preferredName)
+                        .foregroundColor(Color.gray)
                     
-                    VStack(alignment: .leading) {
-                        
-                        HStack(alignment: .center) {
-                            Image(systemName: "pencil")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 23)
-                            
-                            Spacer().frame(width: 13)
-                            Text("Color Name")
-                                .fontWeight(.bold)
-                                .frame(alignment: .leading)
-                        }
-                        
-                        Spacer().frame(height:15)
-                        Text(vm.color.preferredName)
-                            .foregroundColor(Color.gray)
-                        
-                            .padding(.leading, 36)
-                        Spacer().frame(height: 30)
-                        
-                        HStack(alignment: .center) {
-                            Image(systemName:"ellipsis.message")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 23)
-                            Spacer().frame(width: 13)
-                            Text("Color Description")
-                                .fontWeight(.bold)
-                        }
-                        
-                        Spacer().frame(height: 15)
-                        
-                        Text(vm.color.colorDescription)
-                            .foregroundColor(.gray)
-                            .padding(.leading, 36)
-                            .lineSpacing(5)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                }
+                        .padding(.leading, 36)
+                    Spacer().frame(height: 30)
+                    
+                    HStack(alignment: .center) {
+                        Image(systemName:"ellipsis.message")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 23)
+                        Spacer().frame(width: 13)
+                        Text("Color Description")
+                            .fontWeight(.bold)
+                    }
+                    
+                    Spacer().frame(height: 15)
+                    
+                    Text(vm.color.colorDescription)
+                        .foregroundColor(.gray)
+                        .padding(.leading, 36)
+                        .lineSpacing(5)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack{
-                        Text(vm.color.colorCode)
-                            .foregroundColor(Color.black)
-                    }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack{
+                    Text(vm.color.colorCode)
+                        .foregroundColor(Color.black)
                 }
             }
         }
@@ -133,8 +158,10 @@ struct ColorDetailView: View {
                 self.dismiss()
             }
         }))
-        
     }
+    
+    
+    
     
     //MARK: - EXTENSION
     func copyToClipboardView() -> some View{
@@ -186,8 +213,9 @@ struct ColorDetailView: View {
         }
         
     }
-    
 }
+
+
 //MARK: - PREVIEW
 struct ColorDetailView_Previews: PreviewProvider {
     static var previews: some View {

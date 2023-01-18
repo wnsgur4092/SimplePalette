@@ -36,17 +36,6 @@ struct ColorCell: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "heart")
-                            .renderingMode(.original)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(.black)
-                    }
 
                 }
                 
