@@ -11,7 +11,7 @@ import SwiftUI
 struct ColorNotesApp: App {
     var body: some Scene {
         WindowGroup {
-            Home(vm: ColorListViewModel())
+            HomeView(colorListViewModel: ColorListViewModel(), isAddViewPresenting: false)
         }
     }
 }

@@ -14,22 +14,22 @@ struct Home: View {
     
     var body: some View {
         NavigationView {
+            
             ColorListView(vm: vm)
                 .toolbar {
                     ToolbarItem(placement:.principal) {
-                        
                         HStack{
                             Image("Logo")
                                 .resizable()
                                 .scaledToFit()
                                 .fontWeight(.bold)
                                 .frame(width: 32.0)
-                                
                             
-                            Text("Color Notes")
+                            
+                            Text("Simple Plattes")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
-
+                            
                             
                             Spacer()
                             
@@ -41,7 +41,7 @@ struct Home: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 30, height: 30)
-
+                                
                                 
                             }
                         }
@@ -50,6 +50,8 @@ struct Home: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
                     }
                 }
+            
+            
                 .accentColor(Color(.white))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(
@@ -62,7 +64,9 @@ struct Home: View {
             ColorAddView(vm: vm)
         }
     }
+
 }
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {

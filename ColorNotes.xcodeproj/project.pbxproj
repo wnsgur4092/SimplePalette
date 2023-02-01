@@ -23,6 +23,10 @@
 		BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* ColorListView.swift */; };
 		BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* ColorAddView.swift */; };
 		BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */; };
+		BFEEA921298A1C8900D19661 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA920298A1C8900D19661 /* NavigationBarView.swift */; };
+		BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA922298A1E6600D19661 /* HomeView.swift */; };
+		BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA924298A1EF600D19661 /* CategoryView.swift */; };
+		BFEEA928298A301C00D19661 /* RalewayRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFEEA927298A301C00D19661 /* RalewayRegular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,11 @@
 		BF7F1A8029667D4900826BDB /* ColorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListView.swift; sourceTree = "<group>"; };
 		BF7F1A8229667DCA00826BDB /* ColorAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddView.swift; sourceTree = "<group>"; };
 		BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewModel.swift; sourceTree = "<group>"; };
+		BFEEA920298A1C8900D19661 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		BFEEA922298A1E6600D19661 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BFEEA924298A1EF600D19661 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		BFEEA927298A301C00D19661 /* RalewayRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RalewayRegular.ttf; sourceTree = "<group>"; };
+		BFEEA929298A302700D19661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,7 @@
 			children = (
 				BF7AE94B296EA6270033F792 /* ColorCell.swift */,
 				BF7F1A8029667D4900826BDB /* ColorListView.swift */,
+				BFEEA924298A1EF600D19661 /* CategoryView.swift */,
 			);
 			path = "Color List";
 			sourceTree = "<group>";
@@ -93,6 +103,8 @@
 		BF7F1A6829667CAA00826BDB /* ColorNotes */ = {
 			isa = PBXGroup;
 			children = (
+				BFEEA929298A302700D19661 /* Info.plist */,
+				BFEEA926298A301100D19661 /* Fonts */,
 				BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */,
 				BF7F1A7E29667D2200826BDB /* Model */,
 				BF7F1A7D29667D1D00826BDB /* ViewModel */,
@@ -141,11 +153,21 @@
 			isa = PBXGroup;
 			children = (
 				BF7AE94E296ED7B40033F792 /* Home.swift */,
+				BFEEA922298A1E6600D19661 /* HomeView.swift */,
+				BFEEA920298A1C8900D19661 /* NavigationBarView.swift */,
 				BF7AE94D296EA8470033F792 /* Color List */,
 				BF7AE950296EFF060033F792 /* Creation */,
 				BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BFEEA926298A301100D19661 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEA927298A301C00D19661 /* RalewayRegular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF7F1A7129667CAB00826BDB /* Preview Assets.xcassets in Resources */,
+				BFEEA928298A301C00D19661 /* RalewayRegular.ttf in Resources */,
 				BF7F1A6E29667CAB00826BDB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,10 +252,13 @@
 			files = (
 				BF7AE94C296EA6270033F792 /* ColorCell.swift in Sources */,
 				BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */,
+				BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */,
+				BFEEA921298A1C8900D19661 /* NavigationBarView.swift in Sources */,
 				BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */,
 				BF7AE94F296ED7B40033F792 /* Home.swift in Sources */,
 				BF08070629682AF00039CB76 /* Constant.swift in Sources */,
 				BF7AE940296E9DD00033F792 /* ColorDetailViewModel.swift in Sources */,
+				BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */,
 				BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */,
 				BF7AE944296E9E9E0033F792 /* ColorDetailView.swift in Sources */,
 				BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */,
@@ -370,12 +396,13 @@
 				DEVELOPMENT_TEAM = L8QX5LU28U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorNotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,12 +428,13 @@
 				DEVELOPMENT_TEAM = L8QX5LU28U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorNotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

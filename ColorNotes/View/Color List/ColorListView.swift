@@ -41,27 +41,20 @@ struct ColorListView: View {
                                 }
                             }
                         } header: {
-                            HStack(spacing: 7) {
-                                Image(systemName: "pin.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .foregroundColor(Color.gray)
-                                    .frame(height: 23)
-                                    .fontWeight(.bold)
-                                Text(key)
-                            }.foregroundColor(Color.black)
-                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                        
+                               
+                            CategoryView(text: key)
   
                         }
+                        .foregroundColor(.black)
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 5, trailing: 10))
-                        Divider()
-                        
                     }
                     .onAppear{
                         vm.getColorData()
                     }
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }.padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
     }
     
