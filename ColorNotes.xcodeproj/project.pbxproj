@@ -14,7 +14,6 @@
 		BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */; };
 		BF7AE944296E9E9E0033F792 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */; };
 		BF7AE94C296EA6270033F792 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE94B296EA6270033F792 /* ColorCell.swift */; };
-		BF7AE94F296ED7B40033F792 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE94E296ED7B40033F792 /* Home.swift */; };
 		BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */; };
 		BF7F1A6E29667CAB00826BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F1A6D29667CAB00826BDB /* Assets.xcassets */; };
 		BF7F1A7129667CAB00826BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7F1A7029667CAB00826BDB /* Preview Assets.xcassets */; };
@@ -23,12 +22,11 @@
 		BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* ColorListView.swift */; };
 		BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* ColorAddView.swift */; };
 		BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */; };
-		BFEEA921298A1C8900D19661 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA920298A1C8900D19661 /* NavigationBarView.swift */; };
 		BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA922298A1E6600D19661 /* HomeView.swift */; };
 		BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA924298A1EF600D19661 /* CategoryView.swift */; };
-		BFEEA928298A301C00D19661 /* RalewayRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFEEA927298A301C00D19661 /* RalewayRegular.ttf */; };
 		BFEEA931298BACA000D19661 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA930298BACA000D19661 /* CustomTextField.swift */; };
-		BFEEA933298BACCD00D19661 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA932298BACCD00D19661 /* CustomTextField.swift */; };
+		BFEEA933298BACCD00D19661 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA932298BACCD00D19661 /* CustomTextEditor.swift */; };
+		BFEEA937298BB20B00D19661 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA936298BB20B00D19661 /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +36,6 @@
 		BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddViewModel.swift; sourceTree = "<group>"; };
 		BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
 		BF7AE94B296EA6270033F792 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
-		BF7AE94E296ED7B40033F792 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		BF7F1A6629667CAA00826BDB /* ColorNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNotesApp.swift; sourceTree = "<group>"; };
 		BF7F1A6D29667CAB00826BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,13 +43,12 @@
 		BF7F1A8029667D4900826BDB /* ColorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListView.swift; sourceTree = "<group>"; };
 		BF7F1A8229667DCA00826BDB /* ColorAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddView.swift; sourceTree = "<group>"; };
 		BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewModel.swift; sourceTree = "<group>"; };
-		BFEEA920298A1C8900D19661 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		BFEEA922298A1E6600D19661 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BFEEA924298A1EF600D19661 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		BFEEA927298A301C00D19661 /* RalewayRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RalewayRegular.ttf; sourceTree = "<group>"; };
 		BFEEA929298A302700D19661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFEEA930298BACA000D19661 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		BFEEA932298BACCD00D19661 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../View/Creation/CustomTextField.swift; sourceTree = "<group>"; };
+		BFEEA932298BACCD00D19661 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextEditor.swift; path = ../View/Creation/CustomTextEditor.swift; sourceTree = "<group>"; };
+		BFEEA936298BB20B00D19661 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				BF7F1A8229667DCA00826BDB /* ColorAddView.swift */,
+				BFEEA936298BB20B00D19661 /* TitleView.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -156,7 +153,6 @@
 		BF7F1A7F29667D2800826BDB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BF7AE94E296ED7B40033F792 /* Home.swift */,
 				BFEEA92D298B4FBD00D19661 /* Home */,
 				BF7AE950296EFF060033F792 /* Creation */,
 				BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */,
@@ -167,7 +163,6 @@
 		BFEEA926298A301100D19661 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BFEEA927298A301C00D19661 /* RalewayRegular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -176,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				BFEEA922298A1E6600D19661 /* HomeView.swift */,
-				BFEEA920298A1C8900D19661 /* NavigationBarView.swift */,
 				BF7AE94D296EA8470033F792 /* Color List */,
 			);
 			path = Home;
@@ -186,8 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				BF08070529682AF00039CB76 /* Constant.swift */,
-				BFEEA932298BACCD00D19661 /* CustomTextField.swift */,
 				BFEEA930298BACA000D19661 /* CustomTextField.swift */,
+				BFEEA932298BACCD00D19661 /* CustomTextEditor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -260,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF7F1A7129667CAB00826BDB /* Preview Assets.xcassets in Resources */,
-				BFEEA928298A301C00D19661 /* RalewayRegular.ttf in Resources */,
 				BF7F1A6E29667CAB00826BDB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,15 +268,14 @@
 				BF7AE94C296EA6270033F792 /* ColorCell.swift in Sources */,
 				BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */,
 				BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */,
-				BFEEA921298A1C8900D19661 /* NavigationBarView.swift in Sources */,
-				BFEEA933298BACCD00D19661 /* CustomTextField.swift in Sources */,
+				BFEEA933298BACCD00D19661 /* CustomTextEditor.swift in Sources */,
 				BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */,
-				BF7AE94F296ED7B40033F792 /* Home.swift in Sources */,
 				BF08070629682AF00039CB76 /* Constant.swift in Sources */,
 				BF7AE940296E9DD00033F792 /* ColorDetailViewModel.swift in Sources */,
 				BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */,
 				BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */,
 				BF7AE944296E9E9E0033F792 /* ColorDetailView.swift in Sources */,
+				BFEEA937298BB20B00D19661 /* TitleView.swift in Sources */,
 				BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */,
 				BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */,
 				BF080700296683BA0039CB76 /* ColorModel.swift in Sources */,
@@ -426,7 +418,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +450,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

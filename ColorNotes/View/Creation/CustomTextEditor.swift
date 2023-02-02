@@ -18,7 +18,7 @@ struct CustomTextEditor: View {
             RoundedRectangle(cornerRadius: 8).stroke(isFocusing ? Color.blue : Color("border"), lineWidth: 1)
             if textInTextEditor.isEmpty {
                 
-                Text("다른 사람에게 나를 소개할 수 있도록\n자신의 활동을 자세하게 적어주세요")
+                Text("Enter Color's description")
                     .offset(x: 3, y: 8)
                     .padding(16)
                     .zIndex(2)
@@ -32,7 +32,7 @@ struct CustomTextEditor: View {
                         isFocusing = true
                     }
             }
-            FirstResponderTextEditor(text: $textInTextEditor, font: UIFont(name: "NanumGothicBold", size: 14), isFocused: $isFocusing)
+            FirstResponderTextEditor(text: $textInTextEditor, font: UIFont(name: "Raleway", size: 14), isFocused: $isFocusing)
                 .zIndex(1)
                 .padding(16)
                 .frame(height: 200, alignment: .topLeading)

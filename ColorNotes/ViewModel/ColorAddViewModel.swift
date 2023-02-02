@@ -25,7 +25,10 @@ class ColorAddViewModel : ObservableObject {
     @Published var colorAlpha : Double = 1.0 //Color A
     @Published var colorCode : String = "#EB4E3D" //Color Code -> #
     @Published var colorCategory : String = ""
-    @Published var isFavorited : Bool = false //Favorite
+   
+    @Published var isCategoryFocuing : Bool = false
+    @Published var isNameFocusing : Bool = false
+    @Published var isDescriptionFocusing : Bool = false
     
     //Extension For Color Properties
     @Published var swiftUIColor : Color = Color.red

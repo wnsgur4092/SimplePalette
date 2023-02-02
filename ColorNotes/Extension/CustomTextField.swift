@@ -9,36 +9,30 @@ import SwiftUI
 
 struct CustomTextField: View {
     
-//    @ObservedObject var vm = ViewModel()
+    //    @ObservedObject var vm = ViewModel()
     
     var placeholder : String
-    
-    
-    @State var textInTextField : String
+    @State var textInTextField : Binding<String>
     @State var isFocusing : Bool
-//    @State var numberOfText : String
     
-    //    @Binding var textInTextField : String
-    //    @Binding var isFocusing : Bool
-
     
     var body: some View {
         
         ZStack {
-            FirstResponderTextField(text: $textInTextField, placeholder: placeholder, font: UIFont(name: "NanumGothicBold", size: 14), isFocused: $isFocusing)
+            FirstResponderTextField(text: textInTextField, placeholder: placeholder, font: UIFont(name: "FuturaLight", size: 14), isFocused: $isFocusing)
                 .foregroundColor(Color("text"))
                 .padding(16)
-//                .frame(width: 340, height: 52)
+            //                .frame(width: 340, height: 52)
             
             
             
             
             RoundedRectangle(cornerRadius: 8)
                 .stroke(isFocusing ? Color.blue : Color("border"), lineWidth: 1)
-//                .frame(width: 340, height: 52)
+            //                .frame(width: 340, height: 52)
             
         }
-
+        
     }
 }
 
@@ -96,7 +90,7 @@ struct FirstResponderTextField : UIViewRepresentable {
 
 struct TextFieldSection_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(placeholder: "", textInTextField: "", isFocusing: false)
+        CustomTextField(placeholder: "", textInTextField: .constant(""), isFocusing: false)
     }
 }
 

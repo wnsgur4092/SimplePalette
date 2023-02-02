@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryView: View {
     //MARK: - PROPERTIES
     
-    var text : String
+    @State var text : String
     
     //MARK: - PROPERTIES
     var body: some View {
@@ -22,7 +22,7 @@ struct CategoryView: View {
                 .foregroundColor(.gray)
             
             Text(text)
-                .font(.custom("RalewayRegular", size: 18))
+                .font(.custom("Futura", size: 18).italic())
                 .foregroundColor(.gray)
             
         }

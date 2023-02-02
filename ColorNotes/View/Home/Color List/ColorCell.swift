@@ -31,7 +31,7 @@ struct ColorCell: View {
                 
                 HStack {
                     Text(color.colorCode)
-                        .font(.headline)
+                        .font(.custom("FuturaLight", size: 14))
                         .fontWeight(.semibold)
                         .foregroundColor(.black)
                     
@@ -44,7 +44,7 @@ struct ColorCell: View {
                 HStack {
                     
                     Text("Opacity: \(Int(color.colorAlpha * 100))%")
-                        .font(.footnote)
+                        .font(.custom("Raleway", size: 14))
                         .foregroundColor(Color.gray)
                         .multilineTextAlignment(.leading)
                     

@@ -11,7 +11,7 @@ import SSToastMessage
 struct ColorDetailView: View {
     //MARK: - PROPERTIES
     @StateObject var vm : ColorDetailViewModel
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     
     @GestureState var dragOffset = CGSize.zero
     
@@ -40,7 +40,7 @@ struct ColorDetailView: View {
                         HStack {
                             
                             Text("Opacity: \(Int(vm.color.colorAlpha * 100))%")
-                                .font(.footnote)
+                                .font(.custom("Raleway", size: 14))
                                 .foregroundColor(Color.gray)
                                 .multilineTextAlignment(.leading)
                             
@@ -74,6 +74,7 @@ struct ColorDetailView: View {
                     Spacer().frame(width: 15)
                     
                     Text(vm.color.colorCode)
+                        .font(.custom("Raleway", size: 14))
                         .fontWeight(.bold)
                     
                     Spacer()
@@ -105,12 +106,14 @@ struct ColorDetailView: View {
                         
                         Spacer().frame(width: 13)
                         Text("Color Name")
+                            .font(.custom("Raleway", size: 14))
                             .fontWeight(.bold)
                             .frame(alignment: .leading)
                     }
                     
                     Spacer().frame(height:15)
                     Text(vm.color.preferredName)
+                        .font(.custom("Raleway", size: 14))
                         .foregroundColor(Color.gray)
                     
                         .padding(.leading, 36)
@@ -122,20 +125,26 @@ struct ColorDetailView: View {
                             .scaledToFit()
                             .frame(width: 23)
                         Spacer().frame(width: 13)
+                        
                         Text("Color Description")
+                            .font(.custom("Raleway", size: 14))
                             .fontWeight(.bold)
                     }
                     
                     Spacer().frame(height: 15)
                     
                     Text(vm.color.colorDescription)
+                        .font(.custom("Raleway", size: 14))
                         .foregroundColor(.gray)
                         .padding(.leading, 36)
                         .lineSpacing(5)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             }
+         
+            .background(Color("backgroundColor"))
         }
+        .edgesIgnoringSafeArea(.bottom)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -145,8 +154,6 @@ struct ColorDetailView: View {
                 }
             }
         }
-        .toolbarBackground(Color.white, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton, trailing: deleteButton)
         .present(isPresented: $copyingAlert, type: .floater(), position: .bottom, autohideDuration: 1.3) {
@@ -155,7 +162,7 @@ struct ColorDetailView: View {
         
         .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
             if(value.startLocation.x < 20 && value.translation.width > 100) {
-                self.dismiss()
+                self.presentationMode.wrappedValue.dismiss()
             }
         }))
     }
@@ -178,7 +185,7 @@ struct ColorDetailView: View {
     var backButton : some View {
         Button(
             action: {
-                self.dismiss()
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image(systemName: "chevron.backward")
                     .aspectRatio(contentMode: .fit)
@@ -189,29 +196,24 @@ struct ColorDetailView: View {
     
     
     var deleteButton : some View {
-        Button {
+        Button(action: {
             showingAlert = true
-        } label: {
+        }) {
             Image(systemName: "trash")
                 .renderingMode(.original)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 16)
         }
-        .alert("Delete this color", isPresented: $showingAlert) {
-            Button("Cancel", role:.cancel){
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Delete this color"), message: Text("Are you sure to delete it?"), primaryButton: .default(Text("Cancel"), action: {
                 showingAlert = false
-            }
-            
-            Button("Delete", role: .destructive){
+            }), secondaryButton: .destructive(Text("Delete"), action: {
                 vm.deleteColorData()
                 showingAlert = false
-                self.dismiss()
-            }
-        } message: {
-            Text("Are you sure to delete it?")
+                self.presentationMode.wrappedValue.dismiss()
+            }))
         }
-        
     }
 }
 
