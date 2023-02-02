@@ -13,7 +13,6 @@ struct TitleView: View {
     var body: some View {
         
         Text(title)
-            .font(.custom("FuturaLight", size: 22))
             .foregroundColor(.black)
 
         

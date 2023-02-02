@@ -25,7 +25,6 @@ struct CustomTextEditor: View {
                     .frame(alignment: .topLeading)
                     .disabled(true)
                     .foregroundColor(Color("placeholder"))
-                    .font(.custom("NanumGothicBold",size: 14))
                     .lineSpacing(10)
                     .onTapGesture {
                         print("---->Touched")

@@ -40,7 +40,6 @@ struct ColorDetailView: View {
                         HStack {
                             
                             Text("Opacity: \(Int(vm.color.colorAlpha * 100))%")
-                                .font(.custom("Raleway", size: 14))
                                 .foregroundColor(Color.gray)
                                 .multilineTextAlignment(.leading)
                             
@@ -74,7 +73,6 @@ struct ColorDetailView: View {
                     Spacer().frame(width: 15)
                     
                     Text(vm.color.colorCode)
-                        .font(.custom("Raleway", size: 14))
                         .fontWeight(.bold)
                     
                     Spacer()
@@ -106,14 +104,12 @@ struct ColorDetailView: View {
                         
                         Spacer().frame(width: 13)
                         Text("Color Name")
-                            .font(.custom("Raleway", size: 14))
                             .fontWeight(.bold)
                             .frame(alignment: .leading)
                     }
                     
                     Spacer().frame(height:15)
                     Text(vm.color.preferredName)
-                        .font(.custom("Raleway", size: 14))
                         .foregroundColor(Color.gray)
                     
                         .padding(.leading, 36)
@@ -127,14 +123,12 @@ struct ColorDetailView: View {
                         Spacer().frame(width: 13)
                         
                         Text("Color Description")
-                            .font(.custom("Raleway", size: 14))
                             .fontWeight(.bold)
                     }
                     
                     Spacer().frame(height: 15)
                     
                     Text(vm.color.colorDescription)
-                        .font(.custom("Raleway", size: 14))
                         .foregroundColor(.gray)
                         .padding(.leading, 36)
                         .lineSpacing(5)

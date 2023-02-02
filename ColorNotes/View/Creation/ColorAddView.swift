@@ -140,7 +140,6 @@ struct ColorAddView: View {
             vm.saveData()
         } label: {
             Text("Create")
-                .font(.custom("NaumGothicRegular ", size: 16))
         }
     }
 }

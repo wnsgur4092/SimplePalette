@@ -22,7 +22,6 @@ struct CategoryView: View {
                 .foregroundColor(.gray)
             
             Text(text)
-                .font(.custom("Futura", size: 18).italic())
                 .foregroundColor(.gray)
             
         }
