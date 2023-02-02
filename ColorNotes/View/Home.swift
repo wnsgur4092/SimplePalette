@@ -50,8 +50,6 @@ struct Home: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
                     }
                 }
-            
-            
                 .accentColor(Color(.white))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(

@@ -27,6 +27,8 @@
 		BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA922298A1E6600D19661 /* HomeView.swift */; };
 		BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA924298A1EF600D19661 /* CategoryView.swift */; };
 		BFEEA928298A301C00D19661 /* RalewayRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFEEA927298A301C00D19661 /* RalewayRegular.ttf */; };
+		BFEEA931298BACA000D19661 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA930298BACA000D19661 /* CustomTextField.swift */; };
+		BFEEA933298BACCD00D19661 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA932298BACCD00D19661 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		BFEEA924298A1EF600D19661 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		BFEEA927298A301C00D19661 /* RalewayRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RalewayRegular.ttf; sourceTree = "<group>"; };
 		BFEEA929298A302700D19661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BFEEA930298BACA000D19661 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		BFEEA932298BACCD00D19661 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../View/Creation/CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +113,8 @@
 				BF7F1A7E29667D2200826BDB /* Model */,
 				BF7F1A7D29667D1D00826BDB /* ViewModel */,
 				BF7F1A7F29667D2800826BDB /* View */,
+				BFEEA92F298BAC7F00D19661 /* Extension */,
 				BF7F1A6D29667CAB00826BDB /* Assets.xcassets */,
-				BF08070529682AF00039CB76 /* Constant.swift */,
 				BF7F1A6F29667CAB00826BDB /* Preview Content */,
 			);
 			path = ColorNotes;
@@ -153,9 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				BF7AE94E296ED7B40033F792 /* Home.swift */,
-				BFEEA922298A1E6600D19661 /* HomeView.swift */,
-				BFEEA920298A1C8900D19661 /* NavigationBarView.swift */,
-				BF7AE94D296EA8470033F792 /* Color List */,
+				BFEEA92D298B4FBD00D19661 /* Home */,
 				BF7AE950296EFF060033F792 /* Creation */,
 				BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */,
 			);
@@ -168,6 +170,26 @@
 				BFEEA927298A301C00D19661 /* RalewayRegular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BFEEA92D298B4FBD00D19661 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEA922298A1E6600D19661 /* HomeView.swift */,
+				BFEEA920298A1C8900D19661 /* NavigationBarView.swift */,
+				BF7AE94D296EA8470033F792 /* Color List */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BFEEA92F298BAC7F00D19661 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BF08070529682AF00039CB76 /* Constant.swift */,
+				BFEEA932298BACCD00D19661 /* CustomTextField.swift */,
+				BFEEA930298BACA000D19661 /* CustomTextField.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +276,7 @@
 				BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */,
 				BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */,
 				BFEEA921298A1C8900D19661 /* NavigationBarView.swift in Sources */,
+				BFEEA933298BACCD00D19661 /* CustomTextField.swift in Sources */,
 				BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */,
 				BF7AE94F296ED7B40033F792 /* Home.swift in Sources */,
 				BF08070629682AF00039CB76 /* Constant.swift in Sources */,
@@ -264,6 +287,7 @@
 				BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */,
 				BF7F1A6A29667CAA00826BDB /* ColorNotesApp.swift in Sources */,
 				BF080700296683BA0039CB76 /* ColorModel.swift in Sources */,
+				BFEEA931298BACA000D19661 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
