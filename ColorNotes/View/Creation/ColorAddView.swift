@@ -74,6 +74,7 @@ struct ColorAddView: View {
                     .onChange(of: vm.swiftUIColor) { newValue in
                         vm.getColorsFromPicker(pickerColor: newValue)
                     }
+                    .font(.custom("NanumGothic", size: 14))
                     .padding(16)
 
                 RoundedRectangle(cornerRadius: 8)
@@ -84,14 +85,20 @@ struct ColorAddView: View {
     
     var hexadecimalSection : some View {
         VStack(alignment:.leading, spacing: 10){
-            HStack {
+            HStack(spacing: 12) {
+                Image(systemName: "number.square")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 23)
+                
                 TitleView(title: "HEXADECIMAL")
-                Spacer()
+          
             }
 
             ZStack{
                 HStack {
                     Text("\(vm.colorCode)")
+                        .font(.custom("NanumGothic", size: 14))
                         .padding(16)
                     Spacer()
                 }
@@ -106,22 +113,44 @@ struct ColorAddView: View {
     
     var categorySection : some View {
         VStack(alignment:.leading, spacing: 10){
-            TitleView(title: "CATEGORY")
+            HStack(spacing: 12) {
+                Image(systemName: "tag")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 23)
+                
+                TitleView(title: "CATEGORY")
+            }
+           
             CustomTextField(placeholder: "Enter Category of Color", textInTextField: $vm.colorCategory, isFocusing: vm.isCategoryFocuing)
         }
     }
     
     var colorNameSection : some View {
         VStack(alignment:.leading, spacing: 10){
-            TitleView(title: "COLOR NAME")
+            HStack(spacing: 12) {
+                Image(systemName: "pencil")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 23)
+                
+                TitleView(title: "COLOR NAME")
+            }
             CustomTextField(placeholder: "Enter preferred Color name", textInTextField: $vm.preferredName, isFocusing: vm.isNameFocusing)
         }
     }
     
     var colorDescriptionSection : some View {
         VStack(alignment:.leading, spacing: 10){
-            TitleView(title: "COLOR DESCRIPTION")
-            CustomTextEditor(textInTextEditor: vm.colorDescription, isFocusing: vm.isDescriptionFocusing)
+            HStack(spacing: 12) {
+                Image(systemName:"ellipsis.message")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 23)
+                
+                TitleView(title: "COLOR DESCRIPTION")
+            }
+            CustomTextEditor(textInTextEditor: $vm.colorDescription, isFocusing: vm.isDescriptionFocusing)
         }
     }
     

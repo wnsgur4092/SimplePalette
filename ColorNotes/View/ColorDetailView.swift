@@ -65,7 +65,7 @@ struct ColorDetailView: View {
                 Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
                 
                 HStack(alignment: .center) {
-                    Image(systemName: "tag")
+                    Image(systemName: "number.square")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 23)
@@ -73,7 +73,8 @@ struct ColorDetailView: View {
                     Spacer().frame(width: 15)
                     
                     Text(vm.color.colorCode)
-                        .fontWeight(.bold)
+                        .font(.custom("NanumGothic", size: 16))
+                        
                     
                     Spacer()
                     
@@ -110,6 +111,7 @@ struct ColorDetailView: View {
                     
                     Spacer().frame(height:15)
                     Text(vm.color.preferredName)
+                        .font(.custom("NanumGothic", size: 16))
                         .foregroundColor(Color.gray)
                     
                         .padding(.leading, 36)
@@ -129,13 +131,14 @@ struct ColorDetailView: View {
                     Spacer().frame(height: 15)
                     
                     Text(vm.color.colorDescription)
+                        .font(.custom("NanumGothic", size: 16))
                         .foregroundColor(.gray)
                         .padding(.leading, 36)
                         .lineSpacing(5)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             }
-         
+            
             .background(Color("backgroundColor"))
         }
         .edgesIgnoringSafeArea(.bottom)

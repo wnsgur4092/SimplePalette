@@ -30,7 +30,6 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 16)
                 .frame(maxHeight: 36)
-                
                 .opacity(isAnimated ? 1 : 0)
                 .offset(x: 12, y:isAnimated ? 0 : -25)
                 .onAppear {
@@ -42,12 +41,14 @@ struct HomeView: View {
                     let vm = ColorAddViewModel(isPresented: $isAddViewPresenting, colors: $colorListViewModel.colors)
                     ColorAddView(vm: vm)
                 }
-
+                
+                //MARK: - COLOR LIST
                 ColorListView(vm: colorListViewModel)
                     .edgesIgnoringSafeArea(.bottom)
             }//: VSTACK
             .background(Color.white)
         } //: NAVIGATION
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     
@@ -69,6 +70,7 @@ struct HomeView: View {
                 .fontWeight(.black)
                 .foregroundColor(.black)
         }
+        .padding(.vertical, 8)
         
     }
     var createButtonView : some View{

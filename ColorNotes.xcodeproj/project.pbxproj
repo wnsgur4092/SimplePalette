@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF080700296683BA0039CB76 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0806FF296683BA0039CB76 /* ColorModel.swift */; };
 		BF08070629682AF00039CB76 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08070529682AF00039CB76 /* Constant.swift */; };
+		BF1DF109298E148D00EA19A2 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF1DF108298E148D00EA19A2 /* NanumGothic.ttf */; };
 		BF336EDE2976B65600F31A54 /* SSToastMessage in Frameworks */ = {isa = PBXBuildFile; productRef = BF336EDD2976B65600F31A54 /* SSToastMessage */; };
 		BF7AE940296E9DD00033F792 /* ColorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE93F296E9DD00033F792 /* ColorDetailViewModel.swift */; };
 		BF7AE942296E9DDF0033F792 /* ColorAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */; };
@@ -20,8 +21,8 @@
 		BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* ColorListView.swift */; };
 		BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* ColorAddView.swift */; };
 		BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */; };
-		BFEA9759298C0DFE00E34492 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BFEA9758298C0DFE00E34492 /* Realm */; };
-		BFEA975B298C0DFE00E34492 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFEA975A298C0DFE00E34492 /* RealmSwift */; };
+		BFEA9762298C148D00E34492 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BFEA9761298C148D00E34492 /* Realm */; };
+		BFEA9764298C148D00E34492 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFEA9763298C148D00E34492 /* RealmSwift */; };
 		BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA922298A1E6600D19661 /* HomeView.swift */; };
 		BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA924298A1EF600D19661 /* CategoryView.swift */; };
 		BFEEA931298BACA000D19661 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA930298BACA000D19661 /* CustomTextField.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		BF0806FF296683BA0039CB76 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		BF08070529682AF00039CB76 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BF1DF108298E148D00EA19A2 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		BF7AE93F296E9DD00033F792 /* ColorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewModel.swift; sourceTree = "<group>"; };
 		BF7AE941296E9DDF0033F792 /* ColorAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddViewModel.swift; sourceTree = "<group>"; };
 		BF7AE943296E9E9E0033F792 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 		BF7F1A8029667D4900826BDB /* ColorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListView.swift; sourceTree = "<group>"; };
 		BF7F1A8229667DCA00826BDB /* ColorAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAddView.swift; sourceTree = "<group>"; };
 		BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewModel.swift; sourceTree = "<group>"; };
+		BFEA9760298C147A00E34492 /* realm */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = realm; path = ../../Downloads/realm; sourceTree = "<group>"; };
 		BFEEA922298A1E6600D19661 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BFEEA924298A1EF600D19661 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		BFEEA929298A302700D19661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -56,8 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFEA975B298C0DFE00E34492 /* RealmSwift in Frameworks */,
-				BFEA9759298C0DFE00E34492 /* Realm in Frameworks */,
+				BFEA9764298C148D00E34492 /* RealmSwift in Frameworks */,
+				BFEA9762298C148D00E34492 /* Realm in Frameworks */,
 				BF336EDE2976B65600F31A54 /* SSToastMessage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +131,7 @@
 		BF7F1A7829667CC500826BDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFEA9760298C147A00E34492 /* realm */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 		BFEEA926298A301100D19661 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				BF1DF108298E148D00EA19A2 /* NanumGothic.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -204,8 +209,8 @@
 			name = ColorNotes;
 			packageProductDependencies = (
 				BF336EDD2976B65600F31A54 /* SSToastMessage */,
-				BFEA9758298C0DFE00E34492 /* Realm */,
-				BFEA975A298C0DFE00E34492 /* RealmSwift */,
+				BFEA9761298C148D00E34492 /* Realm */,
+				BFEA9763298C148D00E34492 /* RealmSwift */,
 			);
 			productName = ColorNotes;
 			productReference = BF7F1A6629667CAA00826BDB /* ColorNotes.app */;
@@ -237,7 +242,6 @@
 			mainGroup = BF7F1A5D29667CAA00826BDB;
 			packageReferences = (
 				BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */,
-				BFEA9757298C0DFE00E34492 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BF7F1A6729667CAA00826BDB /* Products */;
 			projectDirPath = "";
@@ -255,6 +259,7 @@
 			files = (
 				BF7F1A7129667CAB00826BDB /* Preview Assets.xcassets in Resources */,
 				BF7F1A6E29667CAB00826BDB /* Assets.xcassets in Resources */,
+				BF1DF109298E148D00EA19A2 /* NanumGothic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -390,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -426,6 +431,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.student.ColorNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,6 +466,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.student.ColorNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,14 +507,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		BFEA9757298C0DFE00E34492 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -512,14 +515,12 @@
 			package = BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */;
 			productName = SSToastMessage;
 		};
-		BFEA9758298C0DFE00E34492 /* Realm */ = {
+		BFEA9761298C148D00E34492 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BFEA9757298C0DFE00E34492 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		BFEA975A298C0DFE00E34492 /* RealmSwift */ = {
+		BFEA9763298C148D00E34492 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BFEA9757298C0DFE00E34492 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -9,30 +9,15 @@ import SwiftUI
 
 struct CustomTextEditor: View {
     
-    @State var textInTextEditor : String
+    @State var textInTextEditor : Binding<String>
     @State var isFocusing : Bool
     
     
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 8).stroke(isFocusing ? Color.blue : Color("border"), lineWidth: 1)
-            if textInTextEditor.isEmpty {
-                
-                Text("Enter Color's description")
-                    .offset(x: 3, y: 8)
-                    .padding(16)
-                    .zIndex(2)
-                    .frame(alignment: .topLeading)
-                    .disabled(true)
-                    .foregroundColor(Color("placeholder"))
-                    .lineSpacing(10)
-                    .onTapGesture {
-                        print("---->Touched")
-                        isFocusing = true
-                    }
-            }
-            FirstResponderTextEditor(text: $textInTextEditor, font: UIFont(name: "Raleway", size: 14), isFocused: $isFocusing)
-                .zIndex(1)
+            
+            FirstResponderTextEditor(text: textInTextEditor, font: UIFont(name: "NanumGothic", size: 14), isFocused: $isFocusing)
                 .padding(16)
                 .frame(height: 200, alignment: .topLeading)
             
@@ -99,7 +84,7 @@ struct FirstResponderTextEditor: UIViewRepresentable {
 
 struct CustomTextEditor_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextEditor(textInTextEditor: "", isFocusing: false)
+        CustomTextEditor(textInTextEditor: .constant(""), isFocusing: false)
     }
 }
 

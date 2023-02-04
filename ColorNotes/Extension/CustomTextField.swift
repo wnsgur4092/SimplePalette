@@ -19,7 +19,7 @@ struct CustomTextField: View {
     var body: some View {
         
         ZStack {
-            FirstResponderTextField(text: textInTextField, placeholder: placeholder, font: UIFont(name: "FuturaLight", size: 14), isFocused: $isFocusing)
+            FirstResponderTextField(text: textInTextField, placeholder: placeholder, font: UIFont(name: "NanumGothic", size: 14), isFocused: $isFocusing)
                 .foregroundColor(Color("text"))
                 .padding(16)
             //                .frame(width: 340, height: 52)

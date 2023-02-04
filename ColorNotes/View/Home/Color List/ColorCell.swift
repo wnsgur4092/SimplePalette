@@ -18,7 +18,6 @@ struct ColorCell: View {
         VStack{
             Rectangle()
                 .fill(Color(UIColor(red: color.colorRed, green: color.colorGreen, blue: color.colorBlue, alpha: color.colorAlpha)))
-            
                 .frame(width:180,height: 200)
                 .cornerRadius(10)
                 .padding(.horizontal, 6)
@@ -31,6 +30,7 @@ struct ColorCell: View {
                 
                 HStack {
                     Text(color.colorCode)
+                        .font(.custom("NanumGothicRegular", size: 16))
                         .fontWeight(.semibold)
                         .foregroundColor(.black)
                     
@@ -43,6 +43,7 @@ struct ColorCell: View {
                 HStack {
                     
                     Text("Opacity: \(Int(color.colorAlpha * 100))%")
+                        .font(.custom("NanumGothicRegular", size: 14))
                         .foregroundColor(Color.gray)
                         .multilineTextAlignment(.leading)
                     
@@ -51,7 +52,6 @@ struct ColorCell: View {
                     
                 }
             }
-       
             .padding(.vertical,4)
             .padding(.bottom, 4)
             .padding(.horizontal, 12)
