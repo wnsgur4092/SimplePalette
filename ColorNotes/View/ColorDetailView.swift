@@ -22,6 +22,23 @@ struct ColorDetailView: View {
     var body: some View {
         VStack{
             ScrollView{
+                HStack(spacing: 10) {
+                    Image("tag")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 23)
+                    
+                    Text(vm.color.colorCategory)
+                    .font(.custom("NanumGothic", size: 16))
+                    .foregroundColor(Color.black)
+                    
+                    Spacer()
+                }
+                .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+                
+                Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+                
+                
                 VStack{
                     Rectangle()
                         .fill(Color(UIColor(red: vm.color.colorRed, green: vm.color.colorGreen, blue: vm.color.colorBlue, alpha: vm.color.colorAlpha)))

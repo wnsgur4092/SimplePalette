@@ -22,6 +22,8 @@ struct CategoryView: View {
                 .foregroundColor(.gray)
             
             Text(text)
+                .font(.subheadline)
+                .fontWeight(.semibold)
                 .foregroundColor(.gray)
             
         }

@@ -22,14 +22,8 @@ struct HomeView: View {
                 HStack(alignment:.center){
                     
                     navigationBarView
-                    
-                    Spacer()
-                    
-                    createButtonView
-                    
                 }
-                .padding(.horizontal, 16)
-                .frame(maxHeight: 36)
+                .padding(.top, 12)
                 .opacity(isAnimated ? 1 : 0)
                 .offset(x: 12, y:isAnimated ? 0 : -25)
                 .onAppear {
@@ -69,8 +63,12 @@ struct HomeView: View {
                 .font(.title3)
                 .fontWeight(.black)
                 .foregroundColor(.black)
+            
+            Spacer()
+            
+            createButtonView
         }
-        .padding(.vertical, 8)
+        .padding(12)
         
     }
     var createButtonView : some View{
