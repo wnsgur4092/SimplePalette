@@ -16,6 +16,7 @@ struct CustomTextEditor: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 8).stroke(isFocusing ? Color.blue : Color("border"), lineWidth: 1)
+                .foregroundColor(.white)
             
             FirstResponderTextEditor(text: textInTextEditor, font: UIFont(name: "NanumGothic", size: 14), isFocused: $isFocusing)
                 .padding(16)

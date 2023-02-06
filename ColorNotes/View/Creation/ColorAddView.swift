@@ -39,6 +39,7 @@ struct ColorAddView: View {
                 }
                 .padding(.horizontal, 25.5)
             }
+            .background(Color.white)
             .navigationTitle("Add New Color")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -152,6 +153,8 @@ struct ColorAddView: View {
             }
             CustomTextEditor(textInTextEditor: $vm.colorDescription, isFocusing: vm.isDescriptionFocusing)
         }
+        .background(Color.white)
+        .edgesIgnoringSafeArea(.all)
     }
     
     var dismissButton : some View {

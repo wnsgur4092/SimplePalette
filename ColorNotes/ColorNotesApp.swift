@@ -12,6 +12,7 @@ struct ColorNotesApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView(colorListViewModel: ColorListViewModel())
+                .preferredColorScheme(.light)
         }
     }
 }

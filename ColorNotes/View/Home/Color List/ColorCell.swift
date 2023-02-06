@@ -56,15 +56,18 @@ struct ColorCell: View {
             .padding(.bottom, 4)
             .padding(.horizontal, 12)
             
+            
         }
 
         .frame(maxWidth: 200, maxHeight: 280)
+        .background(Color.white)
         .background(Color.primary.colorInvert())
         .cornerRadius(10)
         
         .shadow(color: Color.primary.opacity(0.05), radius: 1, x: 5, y: 5)
 
     }
+    
     
     
     //MARK: - EXTENSION
