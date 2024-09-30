@@ -54,7 +54,7 @@ struct HomeView: View {
                 .fontWeight(.black)
                 .foregroundColor(.black)
             
-            Image("logo")
+            Image("Logo")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 30, alignment: .center)

@@ -21,7 +21,8 @@
 		BF7F1A8129667D4900826BDB /* ColorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8029667D4900826BDB /* ColorListView.swift */; };
 		BF7F1A8329667DCA00826BDB /* ColorAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8229667DCA00826BDB /* ColorAddView.swift */; };
 		BF7F1A8529667E2600826BDB /* ColorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F1A8429667E2600826BDB /* ColorListViewModel.swift */; };
-		BFEA9762298C148D00E34492 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BFEA9761298C148D00E34492 /* Realm */; };
+		BFC9CD792CAABB8200C585CD /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BFEA9763298C148D00E34492 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BFC9CD7C2CAABC7700C585CD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFC9CD7B2CAABC7700C585CD /* RealmSwift */; };
 		BFEA9764298C148D00E34492 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFEA9763298C148D00E34492 /* RealmSwift */; };
 		BFEEA923298A1E6600D19661 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA922298A1E6600D19661 /* HomeView.swift */; };
 		BFEEA925298A1EF600D19661 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA924298A1EF600D19661 /* CategoryView.swift */; };
@@ -29,6 +30,20 @@
 		BFEEA933298BACCD00D19661 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA932298BACCD00D19661 /* CustomTextEditor.swift */; };
 		BFEEA937298BB20B00D19661 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEA936298BB20B00D19661 /* TitleView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BFC9CD712CAAB84300C585CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BFC9CD792CAABB8200C585CD /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BF0806FF296683BA0039CB76 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
@@ -48,7 +63,6 @@
 		BFEA9760298C147A00E34492 /* realm */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = realm; path = ../../Downloads/realm; sourceTree = "<group>"; };
 		BFEEA922298A1E6600D19661 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BFEEA924298A1EF600D19661 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		BFEEA929298A302700D19661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFEEA930298BACA000D19661 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		BFEEA932298BACCD00D19661 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTextEditor.swift; path = ../View/Creation/CustomTextEditor.swift; sourceTree = "<group>"; };
 		BFEEA936298BB20B00D19661 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -59,8 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC9CD7C2CAABC7700C585CD /* RealmSwift in Frameworks */,
 				BFEA9764298C148D00E34492 /* RealmSwift in Frameworks */,
-				BFEA9762298C148D00E34492 /* Realm in Frameworks */,
 				BF336EDE2976B65600F31A54 /* SSToastMessage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +121,6 @@
 		BF7F1A6829667CAA00826BDB /* ColorNotes */ = {
 			isa = PBXGroup;
 			children = (
-				BFEEA929298A302700D19661 /* Info.plist */,
 				BFEEA926298A301100D19661 /* Fonts */,
 				BF7F1A6929667CAA00826BDB /* ColorNotesApp.swift */,
 				BF7F1A7E29667D2200826BDB /* Model */,
@@ -201,6 +214,7 @@
 				BF7F1A6229667CAA00826BDB /* Sources */,
 				BF7F1A6329667CAA00826BDB /* Frameworks */,
 				BF7F1A6429667CAA00826BDB /* Resources */,
+				BFC9CD712CAAB84300C585CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,8 +223,8 @@
 			name = ColorNotes;
 			packageProductDependencies = (
 				BF336EDD2976B65600F31A54 /* SSToastMessage */,
-				BFEA9761298C148D00E34492 /* Realm */,
 				BFEA9763298C148D00E34492 /* RealmSwift */,
+				BFC9CD7B2CAABC7700C585CD /* RealmSwift */,
 			);
 			productName = ColorNotes;
 			productReference = BF7F1A6629667CAA00826BDB /* ColorNotes.app */;
@@ -242,6 +256,7 @@
 			mainGroup = BF7F1A5D29667CAA00826BDB;
 			packageReferences = (
 				BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */,
+				BFC9CD7A2CAABC7700C585CD /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BF7F1A6729667CAA00826BDB /* Products */;
 			projectDirPath = "";
@@ -418,6 +433,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ColorNotes/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -453,6 +469,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ColorNotes/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,6 +524,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		BFC9CD7A2CAABC7700C585CD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -515,9 +540,10 @@
 			package = BF336EDC2976B65600F31A54 /* XCRemoteSwiftPackageReference "SSToastMessage" */;
 			productName = SSToastMessage;
 		};
-		BFEA9761298C148D00E34492 /* Realm */ = {
+		BFC9CD7B2CAABC7700C585CD /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Realm;
+			package = BFC9CD7A2CAABC7700C585CD /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		BFEA9763298C148D00E34492 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
