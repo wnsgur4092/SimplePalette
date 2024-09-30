@@ -169,7 +169,7 @@ struct ColorDetailView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton, trailing: deleteButton)
+        .navigationBarItems(leading: backButton)
         .present(isPresented: $copyingAlert, type: .floater(), position: .bottom, autohideDuration: 1.3) {
             copyToClipboardView()
         }
@@ -207,28 +207,7 @@ struct ColorDetailView: View {
                     .frame(height: 40)
             }
     }
-    
-    
-    var deleteButton : some View {
-        Button(action: {
-            showingAlert = true
-        }) {
-            Image(systemName: "trash")
-                .renderingMode(.original)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 16)
-        }
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Delete this color"), message: Text("Are you sure to delete it?"), primaryButton: .default(Text("Cancel"), action: {
-                showingAlert = false
-            }), secondaryButton: .destructive(Text("Delete"), action: {
-                vm.deleteColorData()
-                showingAlert = false
-                self.presentationMode.wrappedValue.dismiss()
-            }))
-        }
-    }
+  
 }
 
 
