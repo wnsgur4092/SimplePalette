@@ -1,0 +1,15 @@
+{
+  "originHash" : "fbb49a9ff0e06e846e52a011899fa4ff6af24452ea5e16aae15ce1bb3db95ed5",
+  "pins" : [
+    {
+      "identity" : "sstoastmessage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SimformSolutionsPvtLtd/SSToastMessage.git",
+      "state" : {
+        "revision" : "6f8c15ae5347655a22651c94ed29a651c172e6ce",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
